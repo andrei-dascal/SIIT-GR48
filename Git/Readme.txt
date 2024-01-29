@@ -1,1 +1,2 @@
-Andrei-Sorin Dascal - oras Cluj-Napoca
+Andrei-Sorin Dascal - jud Cluj
+
