@@ -1,1 +1,1 @@
-Andrei-Sorin Dascal
+Andrei-Sorin Dascal - oras Cluj-Napoca
