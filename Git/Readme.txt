@@ -1,1 +1,1 @@
-Andrei-Sorin Dascal - jud Cluj, oras Cluj-Napoca, nr 24
+Andrei-Sorin Dascal - jud Cluj, oras Cluj-Napoca, str Cernauti
