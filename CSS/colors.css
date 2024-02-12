@@ -1,0 +1,7 @@
+h1 {
+    color: var(--main-color);
+}
+
+p {
+    color: var(--secondary-color);
+}

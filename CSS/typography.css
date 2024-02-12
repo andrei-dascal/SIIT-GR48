@@ -1,0 +1,7 @@
+h1 {
+    margin-top: var(--margin-md);
+}
+
+p {
+    margin-top: var(--margin-sm);
+}

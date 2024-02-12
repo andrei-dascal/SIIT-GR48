@@ -3,18 +3,146 @@
     <head>
         <title>CSS intro</title>
 
-        <style>
-            .heading {
-                color: red; 
-                font-size: 20px;
-            }
-        </style>
-
         <link rel="stylesheet" type="text/css" href="global.css" />
+        <!-- <link rel="stylesheet" type="text/css" href="typography.css" />
+        <link rel="stylesheet" type="text/css" href="colors.css" /> -->
+
+        <style>
+            /* p {
+                color:brown;
+            }
+
+            .simple-selectors-container {
+                color:cadetblue;
+            }
+            
+            .simple-selectors-container #title {
+                color:black;
+            }
+
+            .simple-selectors-container #description {
+                color:black;
+            }
+
+            .simple-selectors-container #aditionalDescription {
+                color:gray;
+            }
+
+            .combinators-selectors-container span {
+                color: green;
+            } */
+
+            /* .combinators-selectors-container > p {
+                color: red;
+            } */
+
+            /* div + p {
+                color: blue;
+            } */
+
+            /* div ~ p {
+                color: blue;
+            } */
+
+            /* [class*="container"] {
+                color: red;
+            } */
+
+            /* .pseudo-classes p:first-child {
+                color: red;
+            }
+
+            .pseudo-classes a:link {
+                color:aquamarine
+            }
+            
+            .pseudo-classes a:visited {
+                color:burlywood
+            }
+            
+            .pseudo-classes a:hover {
+                color:brown
+            }
+            
+            .pseudo-classes a:active {
+                color:rgb(135, 7, 255)
+            } */
+
+            /* .pseudo-elements p::first-line {
+                color: red;
+            }
+
+            .pseudo-elements p q::before {
+                content: "<<";
+                color: blue;
+            }
+
+            .pseudo-elements p q::after {
+                content: ">>";
+                color: blue;
+            } */
+        </style>
     </head>
     <body>
-        <h1 id="headingID" style="color: green; font-size: 20px;">Heading 1</h1>
-        <h1 class="heading">Heading 2</h1>
-        <h1 class="heading">Heading 3</h1>
+        <h1>Using variables from external styles</h1>
+        <p>Using variables</p>
+        <hr>
+        <h1>Inline styles</h1>
+        <p style="color: green">Using inline style</p>
+        <hr>
+        <h1>Embedded style</h1>
+        <p>Using embedded style</p>
+        <hr>
+        <h1>Simple selectors</h1>
+        <div class="simple-selectors-container">
+            <h3 id="title">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Itaque, sint!</h3>
+            <p id="description">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Accusamus ducimus praesentium doloremque modi ex accusantium voluptatum nulla, debitis tenetur est esse nobis, numquam quas harum ipsam sequi exercitationem error nostrum quidem consequatur placeat repudiandae. Eius perspiciatis non numquam sit? Harum corrupti vel dolore nihil fugiat deserunt autem voluptate tempora accusamus!</p>
+            <p id="aditionalDescription">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ducimus libero quidem corporis aliquid eos. Reprehenderit esse officia, quo facere, vero provident rem dicta dolores minima similique, sed explicabo quibusdam quis!</p>
+        </div>
+        <hr>
+        <h1>Combinators selectors</h1>
+        <div class="combinators-selectors-container">
+            <h3>Lorem ipsum, <span>dolor sit amet consectetur adipisicing elit.</span> Itaque, sint!</h3>
+            <p>Lorem ipsum dolor sit, <span>amet consectetur adipisicing elit.</span> Accusamus ducimus praesentium doloremque modi ex accusantium voluptatum nulla, debitis tenetur est esse nobis, numquam quas harum ipsam sequi exercitationem error nostrum quidem consequatur placeat repudiandae. Eius perspiciatis non numquam sit? Harum corrupti vel dolore nihil fugiat deserunt autem voluptate tempora accusamus!</p>
+            <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ducimus libero quidem corporis aliquid eos. Reprehenderit esse officia, quo facere, vero provident rem dicta dolores minima similique, sed explicabo quibusdam quis!</p>
+            <div>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Culpa adipisci suscipit consequatur nihil earum. Ratione praesentium veritatis harum illo accusantium!</p>
+            </div>
+            <h1>Test</h1>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsa, rerum!</p>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsa, rerum!</p>
+        </div>
+        <hr>
+        <h1>Attribute selectors</h1>
+        <div class="atribute-selectors-container">
+            <p class="atribute-selector">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Necessitatibus, veniam!</p>
+        </div>
+        <p class="atribute-selector">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Necessitatibus, veniam!</p>
+        <hr>
+        <h1>Pseudo classes</h1>
+        <div class="pseudo-classes">
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolor, delectus.</p>
+            <hr>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ea debitis cum laudantium iusto maiores similique velit laboriosam optio ex quas ipsum, vero officiis ipsam eum illum molestiae quaerat reiciendis distinctio!</p>
+            <a href="https://www.google.ro" target="_blank">Spre Google</a>
+            <div>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloribus, reiciendis.</p>
+            </div>
+            <div>
+                <h3>Heading</h3>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloribus, reiciendis.</p>
+            </div>
+        </div>
+        <hr>
+        <h1>Pseudo elements</h1>
+        <div class="pseudo-elements">
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolore ad nobis magni officiis enim accusantium, mollitia omnis, sequi, laudantium natus praesentium distinctio reprehenderit facilis atque? Placeat perspiciatis dicta amet fuga quibusdam fugit necessitatibus aliquid omnis, accusamus suscipit et eveniet debitis? Consequatur veritatis amet architecto, praesentium numquam officia inventore tempore hic excepturi sapiente porro quis, iusto ab rerum nihil, totam quod rem nulla nemo assumenda necessitatibus quasi odio. Possimus, rem nobis ipsam, obcaecati corrupti culpa libero id animi, ipsum deleniti accusantium maiores unde aspernatur nihil qui eum molestias quam quaerat esse. Sed numquam perferendis repellendus, cupiditate itaque ipsa ut, fugit temporibus error nemo omnis tempora reprehenderit illum, accusantium quaerat minus. Adipisci suscipit voluptatibus eius porro dolore non maxime aliquid inventore rem nostrum maiores consequatur voluptatum earum ipsum esse, neque, corrupti molestiae enim doloribus culpa mollitia labore nulla fuga aperiam. Aspernatur adipisci voluptatum illo nesciunt sit quidem. Necessitatibus error dolores optio. Facilis sit labore iste adipisci debitis vero delectus iure, enim, numquam est, optio similique tenetur quaerat. Explicabo molestias reprehenderit ut architecto maxime ratione ipsam placeat deleniti neque tempore voluptates aliquid enim adipisci obcaecati eligendi, dolore veritatis odio quia fuga ex optio. Consectetur sed non laudantium quam itaque! Laborum, atque pariatur et eligendi nulla at obcaecati sapiente tenetur commodi! Tenetur quae, aspernatur neque, cupiditate error voluptatem magni accusantium veniam, obcaecati molestias ducimus nihil velit vero sapiente! Quas magnam exercitationem deleniti blanditiis ad, impedit, amet similique officiis soluta dolor esse assumenda explicabo enim voluptatem? Odio reiciendis maiores voluptatum unde quisquam repellat dignissimos nesciunt accusantium. Quae, eos asperiores? Fuga modi natus quos. Corrupti ratione molestias cumque mollitia, perspiciatis ipsam deleniti quia! Reiciendis perferendis ipsa repudiandae, autem delectus atque, nostrum voluptate assumenda possimus pariatur beatae hic nemo dignissimos quia. Veniam voluptates nihil autem quidem vitae deserunt nobis reprehenderit corrupti laboriosam error quaerat repellat ipsam totam quos magni incidunt, neque officiis ex blanditiis ipsa. Consequatur accusantium quas sunt excepturi totam cumque eligendi iure maxime perspiciatis in iste rerum cupiditate sequi quae aliquid obcaecati dignissimos, tempora aliquam sit nihil fugiat repellendus dolorem provident perferendis. Nemo accusamus repudiandae sed vero amet ab dignissimos quia impedit fugit, laudantium consequuntur, suscipit eveniet itaque tenetur ut dolorum, officia nihil exercitationem provident? Blanditiis quam in beatae sint doloremque dignissimos quibusdam nisi, veniam voluptatum, fuga ab asperiores, voluptas voluptates fugit! Adipisci error commodi, doloremque, eligendi, culpa dolores harum facere eos nostrum eius aut? Nostrum quis non esse consequatur obcaecati. Magnam perspiciatis, eveniet autem perferendis, debitis libero consectetur velit officiis similique sint sapiente. Asperiores ratione iste repellat at autem, iure nisi dolorem quibusdam commodi doloremque, eligendi tenetur, ducimus hic. Asperiores molestiae assumenda facere necessitatibus quo amet in vitae, illum placeat ducimus aliquam tempore quam, modi fugit ullam quidem! Itaque officiis quod exercitationem, iste consectetur obcaecati nemo, magnam esse aut vitae adipisci impedit, sed nostrum repudiandae repellat saepe non! Adipisci perspiciatis consequuntur repellendus reiciendis impedit modi molestiae iste? Nisi repudiandae fugiat vitae beatae exercitationem quas itaque mollitia natus, rerum at adipisci maxime ut ex repellendus voluptatem totam, eaque aut nemo voluptatibus harum dolor nihil dolore.</p>
+            <p>
+                Lorem ipsum dolor, <q>sit amet consectetur adipisicing elit</q>.autem.
+            </p>
+            <q>
+                Lorem ipsum dolor, sit amet consectetur adipisicing elit.autem.
+            </q>
+        </div>
     </body>
 </html>

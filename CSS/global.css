@@ -1,3 +1,13 @@
+:root {
+    --main-color: red;
+    --secondary-color: blue;
+    --third-color: rgb(32, 222, 32);
+
+    --margin-xs: 4px;
+    --margin-sm: 8px;
+    --margin-md: 12px;
+}
+
 * {
     padding: 0px;
     margin: 0px;
