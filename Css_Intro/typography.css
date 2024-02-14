@@ -1,7 +1,13 @@
+@font-face {
+    font-family: countryWedding;
+    src: url(../Resources/country_wedding/Country\ Wedding.ttf);
+}
+
 h1 {
     margin-top: var(--margin-md);
 }
 
 p {
+    font-family: countryWedding;
     margin-top: var(--margin-sm);
 }
