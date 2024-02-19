@@ -6,6 +6,12 @@
     --margin-xs: 4px;
     --margin-sm: 8px;
     --margin-md: 12px;
+
+    --padding-xs: 4px;
+    --padding-sm: 8px;
+    --padding-md: 12px;
+    --padding-lg: 20px;
+    --padding-xl: 24px;
 }
 
 * {

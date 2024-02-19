@@ -1,0 +1,23 @@
+.menu {
+    background-image: linear-gradient(to right, blue, pink);
+    padding: var(--padding-lg);
+}
+
+.menu li {
+    display: inline-block;
+}
+
+.menu li a {
+    color: white;
+    text-decoration: none;
+    padding: var(--padding-lg) var(--padding-md);
+}
+
+.menu li a:hover {
+    background-color: darkblue;
+}
+
+.menu .account-btn {
+    position: absolute;
+    right: 20px;
+}
