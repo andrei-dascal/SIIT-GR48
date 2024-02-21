@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <link rel="stylesheet" href="../../Css_Intro/global.css">
+
+    <style>
+        .header {
+            display: flex;
+            align-items: center;
+            background-image: linear-gradient(to right, blue, pink);
+        }
+
+        .header .logo {
+            height: 40px;
+        }
+
+        .header .menu {
+            display: flex;
+            flex-basis: 100%;
+            justify-content: space-between;
+        }
+
+        .header a {
+            color: white;
+            text-decoration: none;
+            padding: var(--padding-lg) var(--padding-md);
+        }
+
+        .header a:hover {
+            background-color: darkblue;
+        }
+
+        .header .site-nav {
+            display: flex;
+            align-items: center;
+        }
+
+        .header .account-btn {
+            align-self: flex-end;
+        }
+
+        /* .header2 {
+            display: flex;
+            justify-content: space-between;
+            background-image: linear-gradient(to right, blue, pink);
+        }
+
+        .header2 .nav-menu {
+            display: flex;
+            align-items: center;
+        }
+
+        .header2 .logo {
+            height: 40px;
+        }
+
+        .header2 a {
+            color: white;
+            text-decoration: none;
+            padding: var(--padding-lg) var(--padding-md);
+        }
+
+        .header2 a:hover {
+            background-color: darkblue;
+        } */
+    </style>
+</head>
+
+<body>
+    <header class="header">
+        <img src="../../Images/logo.png" class="logo">
+        <nav class="menu">
+            <div class="site-nav">
+                <a href="#">Article</a>
+                <a href="#">Blog</a>
+                <a href="#">News</a>
+            </div>
+            <a href="#" class="account-btn">Account</a>
+        </nav>
+    </header>
+
+    <!-- <header class="header2">
+        <div class="nav-menu">
+            <img src="../../Images/logo.png" class="logo">
+            <div class="site-nav">
+                <a href="#">Article</a>
+                <a href="#">Blog</a>
+                <a href="#">News</a>
+            </div>
+        </div>
+        <a href="#" class="account-btn">Account</a>
+    </header> -->
+</body>
+
+</html>

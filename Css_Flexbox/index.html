@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <style>
+            .flex-container {
+                display: flex;
+                /* flex-direction: column; */
+                justify-content: space-between;
+            }
+
+            .flex-container .flex-item {
+                /* flex-grow: 1; */
+                padding: 20px 40px;
+                background-color: aqua;
+            }
+
+            .flex-container .item-2 {
+                /* flex-grow: 2; */
+                order: -1;
+            }
+
+            .flex-container .item-center {
+                display: flex;
+                align-items: center;
+            }
+
+            .flex-container-center {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                height: 400px;
+                /* padding: 40px; */
+                margin-top: 12px;
+                background-color: burlywood;
+            }
+
+            .flex-container-center .flex-item-center {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                height: 200px;
+                width: 200px;
+                background-color: aqua;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="flex-container">
+            <div class="flex-item">
+                <p>Item1</p>
+            </div>
+            <div class="flex-item item-2 item-center">Item2</div>
+            <div class="flex-item  item-center">Item3</div>
+        </div>
+        <div class="flex-container-center">
+            <div class="flex-item-center">Center</div>
+        </div>
+    </body>
+</html>
