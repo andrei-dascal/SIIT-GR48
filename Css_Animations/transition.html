@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<head>
+    <style>
+        .effect-container {
+            width: 100px;
+            height: 100px;
+            background-color: brown;
+            margin-bottom: 12px;
+            transition-property: width;
+            transition-duration: 3s;
+            transition-delay: 2s;
+        }
+
+        .effect-container:hover {
+            width: 300px;
+        }
+
+        .linear-effect {
+            transition-timing-function: linear;
+        }
+
+        .ease-effect {
+            transition-timing-function: ease;
+        }
+
+        .ease-in-effect {
+            transition-timing-function: ease-in;
+        }
+
+        .ease-out-effect {
+            transition-timing-function: ease-out;
+        }
+
+        .ease-in-out-effect {
+            transition-timing-function: ease-in-out;
+        }
+    </style>
+</head>
+<body>
+    <h1>Transition</h1>
+    <div class="effect-container linear-effect"></div>
+    <div class="effect-container ease-effect"></div>
+    <div class="effect-container ease-in-effect"></div>
+    <div class="effect-container ease-out-effect"></div>
+    <div class="effect-container ease-in-out-effect"></div>
+</body>

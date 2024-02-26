@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<head>
+    <style>
+        .effect-container {
+            position: relative;
+            width: 100px;
+            height: 100px;
+            background-color: brown;
+            margin-bottom: 12px;
+            animation: moveX 10s infinite;
+        }
+
+        .linear-effect {
+            animation-timing-function: linear;
+        }
+
+        .ease-effect {
+            animation-timing-function: ease;
+        }
+
+        .ease-in-effect {
+            animation-timing-function: ease-in;
+        }
+
+        .ease-out-effect {
+            animation-timing-function: ease-out;
+        }
+
+        .ease-in-out-effect {
+            animation-timing-function: ease-in-out;
+        }
+
+        .animation-container {
+            position: relative;
+            width: 200px;
+            height: 200px;
+            animation-name: changePosition;
+            animation-duration: 10s;
+            animation-iteration-count: infinite;
+        }
+
+        @keyframes moveX {
+            0% {
+                left: 0px;
+            }
+            50% {
+                left: 300px;
+                background-color: blue;
+            }
+            100% {
+                left: 0px;
+            }
+        }
+
+        @keyframes changePosition {
+            0% {
+                background-color: pink;
+                left: 0px;
+                top: 0px;
+            }
+            25% {
+                background-color: red;
+                left: 300px;
+                top: 0px;
+            }
+            50% {
+                background-color: green;
+                left: 300px;
+                top: 300px;
+            }
+            75% {
+                background-color: black;
+                left: 0px;
+                top: 300px;
+            }
+            100% {
+                background-color: pink;
+                left: 0px;
+                top: 0px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <h1>Animations</h1>
+    <div class="effect-container linear-effect"></div>
+    <div class="effect-container ease-effect"></div>
+    <div class="effect-container ease-in-effect"></div>
+    <div class="effect-container ease-out-effect"></div>
+    <div class="effect-container ease-in-out-effect"></div>
+    <hr>
+    <div class="animation-container"></div>
+</body>
