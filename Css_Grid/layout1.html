@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <style>
+        html,
+        body {
+            height: 100%;
+        }
+
+        .container {
+            display: grid;
+            grid-template-columns: 1fr 2fr 1fr;
+            grid-template-rows: auto 1fr auto;
+            gap: 20px;
+            height: 100%;
+        }
+
+        .container .header {
+            /* grid-column: 1 / span 3; */
+            grid-column: 1 / -1;
+            /* padding: 10px; */
+            /* background-color: black; */
+            color: white;
+            /* text-align: center; */
+        }
+
+        .container .sidebar {
+            padding: 10px;
+            background-color: rgb(144, 225, 244);
+            text-align: center;
+        }
+
+        .container .content {
+            grid-column: 2 / -1;
+            padding: 10px;
+            background-color: rgb(144, 146, 244);
+            text-align: center;
+        }
+
+        .container .footer {
+            grid-column: 1 / -1;
+            padding: 10px;
+            background-color: black;
+            color: white;
+            text-align: center;
+        }
+
+        .banner-container {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 300px;
+            background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+            background-size: 400%;
+            animation: linearGradient 15s infinite;
+        }
+
+        @keyframes linearGradient {
+            0% {
+                background-position: 0% 50%;
+            }
+
+            50% {
+                background-position: 100% 50%;
+            }
+
+            100% {
+                background-position: 0% 50%;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="header">
+            <div class="banner-container">
+                <h2>Andrei Dascal</h2>
+                <p>My site</p>
+            </div>
+        </div>
+        <div class="sidebar">SIDEBAR</div>
+        <div class="content">CONTENT</div>
+        <div class="footer">FOOTER</div>
+    </div>
+</body>
+
+</html>
