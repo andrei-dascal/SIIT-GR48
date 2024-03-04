@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    
+    <style>
+        .container {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .title {
+            color: red;
+            font-size: 12px;
+        }
+
+        .paragraph {
+            color: blue;
+        }
+
+        /* Play with orientation */
+        /* https://developer.mozilla.org/en-US/docs/Web/CSS/@media/orientation */
+
+        @media screen and (min-width: 600px) and (max-width: 1199px) {
+            .container {
+                flex-direction: row;
+            }
+
+            .title {
+                color: green;
+                font-size: 20px;
+            }
+
+            .paragraph {
+                font-weight: bold;
+            }
+        }
+
+        @media screen and (min-width: 1200px) {
+            .title {
+                color: blue;
+            }
+        }
+
+        @media print {
+            .title {
+                color: black;
+                font-size: 40px;
+            }
+
+            .paragraph {
+                color: gray;
+                font-size: 32px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h1 class="title">CSS Responsive</h1>
+        <p class="paragraph">Paragraph</p>
+    </div>
+</body>
+
+</html>

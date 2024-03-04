@@ -1,4 +1,6 @@
 :root {
+    --mobile-treshold: 600px;
+
     --main-color: red;
     --secondary-color: blue;
     --third-color: rgb(32, 222, 32);

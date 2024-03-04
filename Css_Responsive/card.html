@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <style>
+        .card-container {
+            display: flex;
+        }
+
+        .card-container .statistics-container {
+            flex: 1 1 0;
+            background-color: rgb(71, 2, 135);
+            color: white;
+        }
+
+        .card-container .statistics-container .insights {
+            color: rgb(116, 35, 191);
+        }
+
+        .card-container .statistics-container .statistics-data {
+            padding: 30px 60px 30px 20px;
+        }
+
+        .card-container .statistics-container .statistics-details {
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .card-container .statistics-image-container {
+            flex: 1 1 0;
+            background: url("../Images/people-office.jpg");
+            background-size: cover;
+        }
+
+        .card-container .statistics-image-container .image-overlay {
+            background-color: rgba(169, 27, 245, 0.5);
+            height: 100%;
+        }
+
+        @media screen and (max-width: 600px) {
+            .card-container {
+                flex-direction: column-reverse;
+            }
+
+            /* .card-container .statistics-container {
+                order: 2;
+            } */
+
+            .card-container .statistics-image-container {
+                flex: 1 0 auto;
+                height: 300px;
+            }
+
+            .card-container .statistics-container .statistics-details {
+                flex-direction: column;
+            }
+
+            .card-container .statistics-container .statistics-details div {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="card-container">
+        <div class="statistics-container">
+            <div class="statistics-data">
+                <h2>Get <span class="insights">insights</span> that help your business grow.</h2>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Reiciendis magnam sit dolor numquam
+                    cupiditate veritatis quos odit quia, corrupti modi fugiat fugit ducimus consectetur fuga! Adipisci
+                    ea laudantium odio deleniti?</p>
+                <div class="statistics-details">
+                    <div>
+                        <h3>10K+</h3>
+                        <p>COMPANIES</p>
+                    </div>
+                    <div>
+                        <h3>314</h3>
+                        <p>Templates</p>
+                    </div>
+                    <div>
+                        <h3>12M+</h3>
+                        <p>Queries</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="statistics-image-container">
+            <div class="image-overlay"></div>
+        </div>
+    </div>
+</body>
+
+</html>

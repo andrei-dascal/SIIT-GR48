@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="../Css_Intro/global.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <style>
+        .header {
+            display: flex;
+            align-items: center;
+            background-image: linear-gradient(to right, blue, pink);
+        }
+
+        .header .logo {
+            height: 40px;
+        }
+
+        .header .menu {
+            display: flex;
+            flex-basis: 100%;
+            justify-content: space-between;
+        }
+
+        .header a {
+            color: white;
+            text-decoration: none;
+            padding: var(--padding-lg) var(--padding-md);
+        }
+
+        .header a:hover {
+            background-color: darkblue;
+        }
+
+        .header .site-nav {
+            display: flex;
+            align-items: center;
+        }
+
+        .header .account-btn {
+            align-self: flex-end;
+        }
+
+        .header .menu-mobile {
+            display: none;
+        }
+
+        /* Mobile up to 600px */
+        @media screen and (max-width: 600px) {
+            .header {
+                justify-content: space-between;
+            }
+
+            .header .menu {
+                display: none;
+            }
+
+            .header .menu-mobile {
+                display: block;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <header class="header">
+        <img src="../Images/logo.png" class="logo">
+        <nav class="menu">
+            <div class="site-nav">
+                <a href="#">Article</a>
+                <a href="#">Blog</a>
+                <a href="#">News</a>
+            </div>
+            <a href="#" class="account-btn">Account</a>
+        </nav>
+        <nav class="menu-mobile">
+            <a class="fa fa-bars"></a>
+        </nav>
+    </header>
+</body>
+
+</html>
