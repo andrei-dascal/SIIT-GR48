@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <script>
+        var numberArray = [5, 15, 3, 2, 8, 100, 11, -100, -1, -50, 76, 76];
+
+        //Problem1: Log the first n elements from numberArray
+
+        var n = 7;
+        // //5, 15, 3, 2, 8, 100, 11, -100, -1, -50, 76, 76
+        // var n = 150;
+        // //5, 15, 3, 2, 8, 100, 11, -100, -1, -50, 76, 76
+        // var n = 3
+        // //5, 15, 3
+
+        //Parcurgem array-ul
+
+        var itemsLength = n > numberArray.length ? numberArray.length : n;
+
+        // var itemsLength;
+        // if (n > numberArray.length)
+        //     itemsLength = numberArray.length;
+        // else
+        //     itemsLength = n;
+
+        for (var index = 0; index < itemsLength; index++) {
+            console.log(numberArray[index]);
+        }
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

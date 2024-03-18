@@ -1,169 +1,242 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <script src="index.js"></script>
-        <script>
-            console.log("---Variables and values (head)---");
 
-            // //This is a comment
+<head>
+    <script src="index.js"></script>
+    <script>
+        console.log("---Variables and values (head)---");
 
-            // //It's allright. Javascript is "not" that scary;
-            // //Escape character: \
-            // console.log("It's allright. Javascript is \"not\" that scary;");
+        // //This is a comment
 
-            // var firstName = "Andrei";
-            // // var firstNameText = "First name is";
-            // //First name is: Andrei;
+        // //It's allright. Javascript is "not" that scary;
+        // //Escape character: \
+        // console.log("It's allright. Javascript is \"not\" that scary;");
 
-            // console.log("First name is " + firstName);
-            // console.log(`First name is ${firstName}`);
+        // var firstName = "Andrei";
+        // // var firstNameText = "First name is";
+        // //First name is: Andrei;
 
-            // console.log(typeof firstName);
+        // console.log("First name is " + firstName);
+        // console.log(`First name is ${firstName}`);
 
-            // var personAge = 25;
-            // console.log(typeof personAge);
+        // console.log(typeof firstName);
 
-            // var newAge = personAge;
-            // console.log(`Person age before change: ${personAge}`);
-            // console.log(`New age before change: ${newAge}`);
+        // var personAge = 25;
+        // console.log(typeof personAge);
 
-            // newAge = 26;
+        // var newAge = personAge;
+        // console.log(`Person age before change: ${personAge}`);
+        // console.log(`New age before change: ${newAge}`);
 
-            // console.log(`Person age after change: ${personAge}`);
-            // console.log(`New age after change: ${newAge}`);
+        // newAge = 26;
 
-            // newAge = "33";
+        // console.log(`Person age after change: ${personAge}`);
+        // console.log(`New age after change: ${newAge}`);
 
-            // var newAge2 = newAge + 1;
-            // console.log(`New age string concatenation: ${newAge2}`);
+        // newAge = "33";
 
-            // var undefinedVar;
-            // console.log(`UndefinedVar type: ${undefinedVar}`);
+        // var newAge2 = newAge + 1;
+        // console.log(`New age string concatenation: ${newAge2}`);
 
-            // var personAge1 = "25";
-            // var personAge2 = 18;
+        // var undefinedVar;
+        // console.log(`UndefinedVar type: ${undefinedVar}`);
 
-            // console.log(`Are equal? ==`, personAge1 == personAge2);
-            // console.log(`Are equal? ===`, personAge1 === personAge2);
+        // var personAge1 = "25";
+        // var personAge2 = 18;
 
-            // // var isEnabled = true;
-            // var isEnabled = false;
+        // console.log(`Are equal? ==`, personAge1 == personAge2);
+        // console.log(`Are equal? ===`, personAge1 === personAge2);
 
-            // var isEligibleForDrivingLicense = personAge2 >= 18;
+        // // var isEnabled = true;
+        // var isEnabled = false;
 
-            // console.log(`isEligibleForDrivingLicense: ${isEligibleForDrivingLicense}`);
+        // var isEligibleForDrivingLicense = personAge2 >= 18;
 
-            //True && True => True
-            //True && False => False
-            //False && True => False
-            //False && False => False
-            //(True && False) && True => False && True => False
-            //True || True => True
-            //True || False => True
-            //False || True => True
-            //False || False => False
-            //True || False || True => True
-            //(True && False) || (True && True) => True
+        // console.log(`isEligibleForDrivingLicense: ${isEligibleForDrivingLicense}`);
 
-            // var personAge1 = 33;
-            // var firstName = "Andrei";
+        //True && True => True
+        //True && False => False
+        //False && True => False
+        //False && False => False
+        //(True && False) && True => False && True => False
+        //True || True => True
+        //True || False => True
+        //False || True => True
+        //False || False => False
+        //True || False || True => True
+        //(True && False) || (True && True) => True
 
-            // var openParanthesize1 = !(personAge1 > 18 && firstName === "Andrei");
-            // var openParanthesize2 = !(personAge1 > 18) || !(firstName === "Andrei");
-            // var openParanthesize3 = personAge1 <= 18 || firstName !== "Andrei";
+        // var personAge1 = 33;
+        // var firstName = "Andrei";
 
-            // console.log(openParanthesize1);
-            // console.log(openParanthesize2);
-            // console.log(openParanthesize3);
+        // var openParanthesize1 = !(personAge1 > 18 && firstName === "Andrei");
+        // var openParanthesize2 = !(personAge1 > 18) || !(firstName === "Andrei");
+        // var openParanthesize3 = personAge1 <= 18 || firstName !== "Andrei";
 
-            // var fruits = ['Banana', 'Orange', 'Apple', 'Mango'];
+        // console.log(openParanthesize1);
+        // console.log(openParanthesize2);
+        // console.log(openParanthesize3);
 
-            // console.log(fruits.length);
-            // console.log(fruits[0]);
-            // console.log(fruits[3]);
-            // console.log(fruits[fruits.length-1]);
+        // var fruits = ['Banana', 'Orange', 'Apple', 'Mango'];
 
-            // fruits.push('Pear');
-            // console.log(fruits[fruits.length-1]);
+        // console.log(fruits.length);
+        // console.log(fruits[0]);
+        // console.log(fruits[3]);
+        // console.log(fruits[fruits.length-1]);
 
-            // console.log(fruits.toString());
-            // console.log(fruits.join(" and "));
+        // fruits.push('Pear');
+        // console.log(fruits[fruits.length-1]);
 
-            // console.log(fruits.pop());
-            // console.log(fruits.toString());
+        // console.log(fruits.toString());
+        // console.log(fruits.join(" and "));
 
-            // console.log('-----------------')
+        // console.log(fruits.pop());
+        // console.log(fruits.toString());
 
-            // var newFruits = fruits;
-            // console.log(fruits.toString());
-            // console.log(newFruits.toString());
+        // console.log('-----------------')
 
-            // newFruits.push('Kiwi');
-            // console.log(fruits.toString());
-            // console.log(newFruits.toString());
+        // var newFruits = fruits;
+        // console.log(fruits.toString());
+        // console.log(newFruits.toString());
 
-            // var address = {
-            //     name: 'Cluj-Napoca'
-            // }
-            
-            // var person1 = {
-            //     firstName: 'Andrei',
-            //     lastName: 'Dascal',
-            //     age: 34,
-            //     cnp: '1234567891012',
-            //     address: address
-            // };
+        // newFruits.push('Kiwi');
+        // console.log(fruits.toString());
+        // console.log(newFruits.toString());
 
-            // // var person2 = {
-            // //     firstName: 'Andrei',
-            // //     lastName: 'Dascal',
-            // //     age: 34,
-            // //     cnp: '1234567891012'
-            // // };
+        // var address = {
+        //     name: 'Cluj-Napoca'
+        // }
 
-            // var person2 = {
-            //     firstName: person1.firstName,
-            //     lastName: person1.lastName,
-            //     age: person1.age,
-            //     cnp: person1.cnp,
-            //     address: person1.address //address
-            // };
+        // var person1 = {
+        //     firstName: 'Andrei',
+        //     lastName: 'Dascal',
+        //     age: 34,
+        //     cnp: '1234567891012',
+        //     address: address
+        // };
 
-            // console.log(`Person1: ${person1.firstName} - ${person1.age} - ${person1.address.name}`);
-            // console.log(`Person2: ${person2.firstName} - ${person2.age} - ${person2.address.name}`);
+        // // var person2 = {
+        // //     firstName: 'Andrei',
+        // //     lastName: 'Dascal',
+        // //     age: 34,
+        // //     cnp: '1234567891012'
+        // // };
 
-            // person1.age = 33;
-            // person1.firstName = "Andrei-Sorin";
-            // person1.address.name = "jud Cluj, ors Cluj-Napoca";
+        // var person2 = {
+        //     firstName: person1.firstName,
+        //     lastName: person1.lastName,
+        //     age: person1.age,
+        //     cnp: person1.cnp,
+        //     address: person1.address //address
+        // };
 
-            // console.log(`Person1: ${person1.firstName} - ${person1.age} - ${person1.address.name}`);
-            // console.log(`Person2: ${person2.firstName} - ${person2.age} - ${person2.address.name}`);
+        // console.log(`Person1: ${person1.firstName} - ${person1.age} - ${person1.address.name}`);
+        // console.log(`Person2: ${person2.firstName} - ${person2.age} - ${person2.address.name}`);
 
-            //Control structures
+        // person1.age = 33;
+        // person1.firstName = "Andrei-Sorin";
+        // person1.address.name = "jud Cluj, ors Cluj-Napoca";
 
-            //Log a message if the person is older than 18;
-            //Log a message if the person is older than 18; Log after a message to Congrats the person;
-            //Log a message if the person is older than 18 otherwise log another message; Log after a message to Congrats the person;
+        // console.log(`Person1: ${person1.firstName} - ${person1.age} - ${person1.address.name}`);
+        // console.log(`Person2: ${person2.firstName} - ${person2.age} - ${person2.address.name}`);
 
-            var personAge1 = 55;
+        //Control structures
 
-            var isAdult = personAge1 > 18;
+        //Log a message if the person is older than 18;
+        //Log a message if the person is older than 18; Log after a message to Congrats the person;
+        //Log a message if the person is older than 18 otherwise log another message; Log after a message to Congrats the person;
 
-            if(isAdult) {
-                console.log("I'm an adult");
-            } else {
-                console.log("I'm not an adult");
-            }
+        // var personAge1 = 55;
 
-            var adultText = isAdult ? "I'm an adult" : "I'm not an adult";
-            console.log(adultText);
+        // var isAdult = personAge1 > 18;
 
-            console.log("Congrats");
-        </script>
-    </head>
-    <body>
-        <script>
-            console.log("---Variables and values (body)---");
-        </script>
-    </body>
+        // if(isAdult) {
+        //     console.log("I'm an adult");
+        // } else {
+        //     console.log("I'm not an adult");
+        // }
+
+        // // var adultText = isAdult ? "I'm an adult" : "I'm not an adult";
+        // // console.log(adultText);
+
+        // console.log("Congrats");
+
+        // var domainQuiz = "History";
+
+        // if (domainQuiz === "Geography") {
+        //     console.log("Geography");
+        // } else if (domainQuiz === "History") {
+        //     console.log("History");
+        //     // domainQuiz = "History - V2";
+        // } else if (domainQuiz === "Math") {
+        //     console.log("Math");
+        // } else {
+        //     // console.log("");
+        //     throw new Error("Not known domain");
+        // }
+
+        // var Domain = {
+        //     None: "None",
+        //     Geography: "Geography",
+        //     History: "History",
+        //     Math: "Math",
+        // }
+
+        // var Difficulty = {
+        //     None: "None",
+        //     Beginner: "Beginner",
+        //     Intermediate: "Intermediate",
+        //     Advanced: "Advanced"
+        // }
+
+        // var Gender = {
+        //     None: "None",
+        //     Male: "Male",
+        //     Female: "Female"
+        // }
+
+        // switch (domainQuiz) {
+        //     case Domain.Geography:
+        //         console.log("Geography");
+        //         break;
+        //     case Domain.History:
+        //         console.log("History");
+        //         domainQuiz = "History - V2";
+        //         break;
+        //     case Domain.Math:
+        //         console.log("Math");
+        //         break;
+        //     default:
+        //         throw new Error("Not known domain");
+        // }
+
+        // var whileIndex = 100;
+
+        // // while(whileIndex++ < 10) {
+        // while(whileIndex < 10) {
+        //     whileIndex++;
+        //     console.log(whileIndex);
+        //     // whileIndex++; //whileIndex = whileIndex + 1;
+        // }
+
+        // do {
+        //     // console.log("Inside do");
+        //     whileIndex++;
+        //     console.log(whileIndex);
+        // } while (whileIndex < 10);
+
+        // for(var index = 0; index < 10; index++) {
+        //     var newIndex = index + 1;
+        //     console.log(newIndex);
+        // }
+
+    </script>
+</head>
+
+<body>
+    <script>
+        console.log("---Variables and values (body)---");
+    </script>
+</body>
+
 </html>
