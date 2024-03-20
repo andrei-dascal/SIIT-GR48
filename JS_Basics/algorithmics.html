@@ -3,30 +3,137 @@
 
 <head>
     <script>
-        var numberArray = [5, 15, 3, 2, 8, 100, 11, -100, -1, -50, 76, 76];
+        // var numberArray = [5, 15, 3, 2, 8, 100, 11, -100, -1, -50, 76, 76];
 
         //Problem1: Log the first n elements from numberArray
 
-        var n = 7;
-        // //5, 15, 3, 2, 8, 100, 11, -100, -1, -50, 76, 76
-        // var n = 150;
-        // //5, 15, 3, 2, 8, 100, 11, -100, -1, -50, 76, 76
-        // var n = 3
-        // //5, 15, 3
+        // var n = 7;
+        // // //5, 15, 3, 2, 8, 100, 11, -100, -1, -50, 76, 76
+        // // var n = 150;
+        // // //5, 15, 3, 2, 8, 100, 11, -100, -1, -50, 76, 76
+        // // var n = 3
+        // // //5, 15, 3
 
-        //Parcurgem array-ul
+        // //Parcurgem array-ul
 
-        var itemsLength = n > numberArray.length ? numberArray.length : n;
+        // var itemsLength = n > numberArray.length ? numberArray.length : n;
 
-        // var itemsLength;
-        // if (n > numberArray.length)
-        //     itemsLength = numberArray.length;
-        // else
-        //     itemsLength = n;
+        // // var itemsLength;
+        // // if (n > numberArray.length)
+        // //     itemsLength = numberArray.length;
+        // // else
+        // //     itemsLength = n;
 
-        for (var index = 0; index < itemsLength; index++) {
-            console.log(numberArray[index]);
+        // for (var index = 0; index < itemsLength; index++) {
+        //     console.log(numberArray[index]);
+        // }
+
+        //LET VS CONST VS VAR
+
+        //console.log(variableUndeclared);
+        // console.log(variableDeclaredWithVar);
+
+        // var variableDeclaredWithVar = 10;
+        // console.log(variableDeclaredWithVar);
+
+        // var variableDeclaredWithVar = "Test";
+        // console.log(variableDeclaredWithVar);
+
+        // console.log(variableDeclaredWithLet);
+
+        // let variableDeclaredWithLet = 10;
+        // console.log(variableDeclaredWithLet);
+
+        // let variableDeclaredWithLetV1 = "Test";
+
+        // console.log(variableDeclaredWithConst);
+        
+        // const variableDeclaredWithConst = 10;
+        
+        // variableDeclaredWithConst = "Test";
+
+        //BLOCK statements
+
+        // const variableDeclaredWithVar = 10;
+
+        // const somethingIsTrue = true;
+
+        // if(somethingIsTrue) {
+        //     const variableDeclaredWithVar = 11;
+        // } else {
+        //     const variableDeclaredWithVar = 12;
+        // }
+        // // variableDeclaredWithVar //Will have the value 11;
+
+        // console.log(variableDeclaredWithVar);
+
+        //FOR HOME: 
+        //const arr1 = [[1,2,3], [4,5], [6]]
+        //create a new array from arr1 using spread operator
+        //in arr1 add 7 in the last item => [[1,2,3], [4,5], [6, 7]]
+        // const arr1 = ['one', 'two'];
+        // // const arr2 = [...arr1, 'three', 'four', 'five'];
+        
+        // const arr2 = [...arr1];
+
+        // arr1.push('three');
+
+        // console.log(arr1);
+        // console.log(arr2);
+
+        // const numberArray = [5, 15, 3, 2, 8, 100, 11, -100, -1, -50, 76, 76];
+
+        //Problem2: Console log the even numbers from array
+
+        //parcurg tot array-ul
+        //la fiecare pas (fiecare numar) il verific daca e par sau nu
+        //daca e par il afisez
+        //daca nu e par merg mai departe
+
+        // for(let index = 0; index < numberArray.length; index++) {
+        //     const numberFromArray = numberArray[index];
+
+        //     if(numberFromArray % 2 === 0)
+        //         console.log(numberFromArray);
+        // }
+
+        // const evenNumberArray = [];
+        
+        // for(let index = 0; index < numberArray.length; index++) {
+        //     const numberFromArray = numberArray[index];
+
+        //     if(numberFromArray % 2 === 0)
+        //         evenNumberArray.push(numberFromArray);
+        // }
+
+        // console.log(evenNumberArray);
+
+        //Problem 3: Log n last items
+        // const numberArray = [5, 15, 3, 2, 8, 100, 11, -100, -1, -50, 76, 76];
+        // const n = 4;
+
+        // //-1 -50 76 76
+
+        // for(let index = numberArray.length - n; index < numberArray.length; index++) {
+        //     console.log(numberArray[index]);
+        // }
+
+        // console.log("-------------");
+
+        // for(let index = numberArray.length - 1; index >= numberArray.length - n; index--) {
+        //     console.log(numberArray[index]);
+        // }
+
+        //Problem4: Log the sum of the elements
+        
+        const numberArray = [5, 15, 3, 2, 8, 100, 11, -100, -1, -50, 76, 76];
+        let sum = 0;
+
+        for(let index = 0; index < numberArray.length; index++) {
+            sum = sum + numberArray[index];
         }
+
+        console.log(sum);
     </script>
 </head>
 
