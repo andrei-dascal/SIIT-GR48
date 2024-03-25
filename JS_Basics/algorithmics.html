@@ -47,9 +47,9 @@
         // let variableDeclaredWithLetV1 = "Test";
 
         // console.log(variableDeclaredWithConst);
-        
+
         // const variableDeclaredWithConst = 10;
-        
+
         // variableDeclaredWithConst = "Test";
 
         //BLOCK statements
@@ -73,7 +73,7 @@
         //in arr1 add 7 in the last item => [[1,2,3], [4,5], [6, 7]]
         // const arr1 = ['one', 'two'];
         // // const arr2 = [...arr1, 'three', 'four', 'five'];
-        
+
         // const arr2 = [...arr1];
 
         // arr1.push('three');
@@ -98,7 +98,7 @@
         // }
 
         // const evenNumberArray = [];
-        
+
         // for(let index = 0; index < numberArray.length; index++) {
         //     const numberFromArray = numberArray[index];
 
@@ -125,15 +125,239 @@
         // }
 
         //Problem4: Log the sum of the elements
-        
-        const numberArray = [5, 15, 3, 2, 8, 100, 11, -100, -1, -50, 76, 76];
+
+        // const numberArray = [5, 15, 3, 2, 8, 100, 11, -100, -1, -50, 76, 76];
+        // let sum = 0;
+
+        // for(let index = 0; index < numberArray.length; index++) {
+        //     sum = sum + numberArray[index];
+        // }
+
+        // console.log(sum);
+
+        //Problem5: Find min/max in array
+
+        //Definim un reper / ceea ce consideram noi un minim/maxim - numberArray[0];
+        //Parcurgem array-ul 
+        //Daca gasim un alt element cu valoare mai mica => facem swap(inlocuim) la min
+        //Daca gasim un alt element cu valoare mai mare => facem swap(inlocuim) la max
+
+        // const numberArray = [5, 15, 3, 2, 8, 100, 11, -100, -1, -50, 76, 76];
+
+        // let min = numberArray[0];
+        // let max = numberArray[0];
+
+        // for(let index = 1; index < numberArray.length; index++) {
+        //     if(numberArray[index] < min) {
+        //         min = numberArray[index];
+        //     }
+
+        //     if(numberArray[index] > max) {
+        //         max = numberArray[index];
+        //     }
+        // }
+
+        // console.log(`The min value is: ${min}`);
+        // console.log(`The max value is: ${max}`);
+
+        //Problem6: FizzBuzz game;
+        //If divide by 3 => fizz; if divide cu 5 => buzz, if divide cu 15 => fizzbuzz; else logam numarul
+
+        // const numberArray = [5, 15, 3, 2, 30, 100, 11, -100, -1, -50, 76, 76];
+
+        //WRONG pattern
+        //Parcurgem tot array-ul
+        //If divide cu 3 => log fizz
+        //If divide cu 5 => log buzz
+        //If divide cu 15 => log fizzbuzz
+        //Afisam numarul daca nu respecta conditiile de mai sus
+
+        //Buzz, FizzBuzz, Fizz, 2, 8, samd
+
+        // for(let index = 0; index < numberArray.length; index++) {
+        //     if(numberArray[index] % 3 === 0){
+        //         console.log("Fizz");
+        //     } else if (numberArray[index] % 5 === 0) {
+        //         console.log("Buzz");
+        //     } else if(numberArray[index] % 15 === 0) {
+        //     // } else if(numberArray[index] % 5 === 0 && numberArray[index] % 3 === 0) {
+        //         console.log("FizzBuzz");
+        //     } else {
+        //         console.log(numberArray[index]);
+        //     }
+        // }
+
+        //GOOD pattern
+        //Parcurgem tot array-ul
+        //If divide cu 15 => log fizzbuzz
+        //If divide cu 5 => log buzz
+        //If divide cu 3 => log fizz
+        //Afisam numarul daca nu respecta conditiile de mai sus
+
+        // for(let index = 0; index < numberArray.length; index++) {
+        // numberArray[index] % 15 === 0 ? 
+        //     console.log("FizzBuzz") : 
+        //     numberArray[index] % 5 === 0 ? 
+        //         console.log("Buzz") : 
+        //         numberArray[index] % 3 === 0 ?
+        //             console.log("Fizz") : 
+        //             console.log(numberArray[index]);
+
+        // if(numberArray[index] % 15 === 0){
+        //     console.log("FizzBuzz");
+        // } else if (numberArray[index] % 5 === 0) {
+        //     console.log("Buzz");
+        // } else if(numberArray[index] % 3 === 0) {
+        //     console.log("Fizz");
+        // } else {
+        //     console.log(numberArray[index]);
+        // }
+
+        //     if(numberArray[index] % 15 === 0){
+        //         console.log("FizzBuzz");
+        //         continue;
+        //     } 
+
+        //     if (numberArray[index] % 5 === 0) {
+        //         console.log("Buzz");
+        //         // continue;
+        //         break;
+        //     } 
+
+        //     if(numberArray[index] % 3 === 0) {
+        //         console.log("Fizz");
+        //         continue;
+        //     } 
+
+        //     console.log(numberArray[index]);
+        // }
+
+        //Problem 8: Generate random number between 0 and 100;
+
+        // console.log(Math.random()); // Random between 0 inclusive si 1 exclusiv
+
+        // const randomNumber = Math.random() * 100;
+
+        // console.log(randomNumber);
+
+        // console.log(Math.floor(randomNumber));
+
+        //Problem 9: Generate n numbers for an array with values between 0 and 100;
+
+        // const n = 10;
+        // const randomNumbers = [];
+
+        // for(let index = 0; index < n; index++) {
+        //     // let randomNumberFloat = Math.random() * 100;
+        //     const randomNumberInt = Math.floor(Math.random() * 100);
+
+        //     randomNumbers.push(randomNumberInt);
+        // }
+
+        // console.log(randomNumbers);
+
+        //Problem10: From a list of persons(a person is defined by name, age, location)
+        // => only those over 18 and from a specific location can vote => log them
+
+        // const person1 = {
+        //     name: "Andrei",
+        //     age: 34,
+        //     location: "Cluj-Napoca"
+        // };
+
+        // const person2 = {
+        //     name: "Maria",
+        //     age: 19,
+        //     location: "Cluj-Napoca"
+        // };
+
+        // const person3 = {
+        //     name: "Sorin",
+        //     age: 15,
+        //     location: "Cluj-Napoca"
+        // };
+
+        // const person4 = {
+        //     name: "Andreea",
+        //     age: 34,
+        //     location: "Arad"
+        // };
+
+        // const person5 = {
+        //     name: "Liviu",
+        //     age: 12,
+        //     location: "Timisoara"
+        // };
+
+        // const personList = [person1, person2, person3, person4, person5];
+
+        // for (let index = 0; index < personList.length; index++) {
+        //     if (personList[index].age >= 18 && personList[index].location === 'Cluj-Napoca') {
+        //         console.log(`${personList[index].name} from ${personList[index].location} can vote!`);
+        //     } else {
+        //         if (personList[index].age < 18 && personList[index].location !== 'Cluj-Napoca') {
+        //             console.log(`${personList[index].name} from ${personList[index].location} cannot vote! You are under 18 and you are not from Cluj-Napoca`);
+        //         } else if (personList[index].age < 18) {
+        //             console.log(`${personList[index].name} from ${personList[index].location} cannot vote! You are under 18`);
+        //         } else {
+        //             console.log(`${personList[index].name} from ${personList[index].location} cannot vote! You are not from Cluj-Napoca`);
+        //         }
+        //     }
+        // }
+
+        // for (let index = 0; index < personList.length; index++) {
+        //     if (personList[index].age >= 18 && personList[index].location === 'Cluj-Napoca') {
+        //         console.log(`${personList[index].name} from ${personList[index].location} can vote!`);
+        //         continue;
+        //     }
+
+        //     if (personList[index].age < 18 && personList[index].location !== 'Cluj-Napoca') {
+        //         console.log(`${personList[index].name} from ${personList[index].location} cannot vote! You are under 18 and you are not from Cluj-Napoca`);
+        //         continue;
+        //     }
+
+        //     if (personList[index].age < 18) {
+        //         console.log(`${personList[index].name} from ${personList[index].location} cannot vote! You are under 18`);
+        //         continue;
+        //     }
+
+        //     console.log(`${personList[index].name} from ${personList[index].location} cannot vote! You are not from Cluj-Napoca`);
+        // }
+
+        // for(let person of personList) {
+        //     console.log(`${person.name} from ${person.location}!`);
+        // }
+
+        //Problem 11: Calculeaza suma cifrelor dintr-un numar;
+
+        let number = 0;
+        // 1 + 2 + 3  + 4
+
         let sum = 0;
 
-        for(let index = 0; index < numberArray.length; index++) {
-            sum = sum + numberArray[index];
-        }
+        // while(number > 0)
+        // {
+        //     const numberSlice = number % 10;
+        //     sum = sum + numberSlice;
+        //     number = Math.floor(number / 10);
+        // }
 
-        console.log(sum);
+        // do {
+        //     const numberSlice = number % 10;
+        //     sum = sum + numberSlice;
+        //     number = Math.floor(number / 10);
+        // } while(number > 0)
+
+        // console.log(sum);
+
+        // let age;
+
+        // do {
+        //     age = parseInt(prompt("Please enter your age:"));
+        // } while(isNaN(age) || age <= 0);
+
+        // console.log(`Valid age entered: ${age}`);
+
     </script>
 </head>
 
