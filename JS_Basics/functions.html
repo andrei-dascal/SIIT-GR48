@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <script>
+        // const numberArray1 = [5, 15, 3, 2, 8, 100, 11, -100, -1, -50, 76, 76];
+        // const numberArray2 = [5, 12, 13, 23, 83, 10, 110, -108, -18];
+        // const numberArray3 = [5, 12];
+
+        // Problem2: Console log the even numbers from array
+
+        // for (let index = 0; index < numberArray1.length; index++) {
+        //     const numberFromArray = numberArray1[index];
+
+        //     if (numberFromArray % 2 === 0)
+        //         console.log(numberFromArray);
+        // }
+
+        // for (let index = 0; index < numberArray2.length; index++) {
+        //     const numberFromArray = numberArray2[index];
+
+        //     if (numberFromArray % 2 === 0)
+        //         console.log(numberFromArray);
+        // }
+
+        // for (let index = 0; index < numberArray3.length; index++) {
+        //     const numberFromArray = numberArray3[index];
+
+        //     if (numberFromArray % 2 === 0)
+        //         console.log(numberFromArray);
+        // }
+
+        // function logEvenNumbers(numberArray) {
+        //     for (let index = 0; index < numberArray.length; index++) {
+        //         const numberFromArray = numberArray[index];
+
+        //         if (numberFromArray % 2 === 0)
+        //             console.log(numberFromArray);
+        //     }
+        // }
+
+        // logEvenNumbers();
+        // logEvenNumbers(numberArray1);
+        // console.log('---');
+        // logEvenNumbers(numberArray2);
+        // console.log('---');
+        // logEvenNumbers(numberArray3);
+        // console.log('---');
+        // logEvenNumbers([12, 12, 12, 4, 11]);
+
+        // var fullName = "Stefan cel Mare";
+
+        // function logName(fullNameDifferent) {
+        //     fullName = "Mircea cel Batran";
+        //     console.log(`I will always log ${fullNameDifferent}`);
+        // }
+
+        // console.log(fullName);
+
+        // logName("Andrei Dascal");
+        // logName("Simona Halep");
+        // logName("Gheorghe Hagi");
+
+        // const name = {
+        //     firstName: "Andrei",
+        //     lastName: "Dascal"
+        // };
+
+        // function logName(fullName) {
+        //     fullName.firstName = "Andrei-Sorin";
+        //     console.log(`I will always log ${fullName.firstName} - ${fullName.lastName}`);
+        // }
+
+        // logName({...name});
+
+        // console.log(name);
+
+        // function getEvenNumbers(numberArray) {
+        //     const evenNumbers = [];
+
+        //     for (let index = 0; index < numberArray.length; index++) {
+        //         const numberFromArray = numberArray[index];
+
+        //         if (numberFromArray % 2 === 0)
+        //             evenNumbers.push(numberFromArray);
+        //     }
+
+        //     return evenNumbers;
+        // }
+
+        // const evenNumbers = getEvenNumbers([5, 15, 3, 2, 8, 100, 11, -100, -1, -50, 76, 76]);
+
+        // console.log(evenNumbers);
+
+        //Self invoked function
+        // (function () {
+        //     console.log("Loading data");
+        // })();
+
+        // (function (name) {
+        //     console.log(`Loading data ${name}`);
+        // })("Andrei");
+
+
+        //n! = 1 * 2 * 3 * 4 * ... * n-1 * n
+        //3! = 1 * 2 * 3
+        // function factorial(number) {
+        //     if(number < 0)
+        //         return;
+
+        //     if(number === 0 || number === 1) 
+        //         return 1;
+
+        //     return number * factorial(number - 1);
+        // }
+
+        // console.log(`Factorial de 3 este: ${factorial(3)}`);
+        // console.log(`Factorial de 5 este: ${factorial(5)}`);
+        // console.log(`Factorial de 10 este: ${factorial(10)}`);
+
+        // function sum(number1, number2) {
+        //     return number1 + number2;
+        // }
+
+        // function sum(number1, number2, number3) {
+        //     return number1 + number2 + number3;
+        // }
+
+        // console.log(`Suma dintre 10 si 100 este: ${sum(10, 100, 0)}`);
+        // console.log(`Suma dintre 10 si 100 este: ${sum(10, 100)}`);
+        // console.log(`Suma dintre 10, 50, 5, 17, 20 si 100 este: ${sum(sum(sum(sum(sum(10, 50), 5), 17),20), 100)}`);
+
+        function sum(...numbers) {
+            let sum = 0;
+
+            // numbers.forEach(number => {
+            //     sum += number
+            // });
+
+            for (let index = 0; index < numbers.length; index++) {
+                sum = sum + numbers[index];
+            }
+
+            return sum;
+        }
+
+        console.log(`Suma dintre 10, 50, 5, 17, 20 si 100 este: ${sum(10, 50, 5, 17, 20, 100)}`);
+        console.log(`Suma dintre 10 si 100 este: ${sum(10, 100)}`);
+
+    </script>
+</head>
+
+<body></body>
+
+</html>
