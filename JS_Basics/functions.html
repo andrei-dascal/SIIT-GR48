@@ -130,23 +130,97 @@
         // console.log(`Suma dintre 10 si 100 este: ${sum(10, 100)}`);
         // console.log(`Suma dintre 10, 50, 5, 17, 20 si 100 este: ${sum(sum(sum(sum(sum(10, 50), 5), 17),20), 100)}`);
 
-        function sum(...numbers) {
-            let sum = 0;
+        // function sum(...numbers) {
+        //     let sum = 0;
 
-            // numbers.forEach(number => {
-            //     sum += number
-            // });
+        //     // numbers.forEach(number => {
+        //     //     sum += number
+        //     // });
 
-            for (let index = 0; index < numbers.length; index++) {
-                sum = sum + numbers[index];
-            }
+        //     for (let index = 0; index < numbers.length; index++) {
+        //         sum = sum + numbers[index];
+        //     }
 
-            return sum;
+        //     return sum;
+        // }
+
+        // console.log(`Suma dintre 10, 50, 5, 17, 20 si 100 este: ${sum(10, 50, 5, 17, 20, 100)}`);
+        // console.log(`Suma dintre 10 si 100 este: ${sum(10, 100)}`);
+
+        //Most common used functions on arrays
+
+        const person1 = {
+            name: 'Andrei',
+            age: 34,
+            location: 'Cluj-Napoca'
         }
 
-        console.log(`Suma dintre 10, 50, 5, 17, 20 si 100 este: ${sum(10, 50, 5, 17, 20, 100)}`);
-        console.log(`Suma dintre 10 si 100 este: ${sum(10, 100)}`);
+        const person2 = {
+            name: 'Maria',
+            age: 19,
+            location: 'Cluj-Napoca'
+        }
 
+        const person3 = {
+            name: 'Sorin',
+            age: 7,
+            location: 'Cluj-Napoca'
+        }
+
+        const personList = [person1, person2, person3];
+        
+        // const personListFiltered = personList.filter(person => person.age > 18);
+
+        // console.log(personListFiltered);
+        
+        // const personFind = personList.find(person => person.age > 18);
+
+        // console.log(personFind);
+
+        // const areThereAnyAdults = personList.some(person => person.age > 18);
+        // // const areThereAnyAdults = personFind !== undefined;
+        // //const areThereAnyAdults = personListFiltered.length > 0;
+
+        // console.log(areThereAnyAdults);
+        // // console.log(personFind !== undefined);
+
+        // const personListMap = personList.map(person => person.age = person.age + 1);
+        // console.log(personListMap);
+
+        // const numberArray = [40, 1, 15, 200];
+        
+        // numberArray.sort((a, b) => { return a - b });
+
+        // console.log(numberArray);
+
+        // personList.sort((a, b) => { return a.age - b.age });
+
+        // console.log(personList);
+
+        // personList.forEach(person => {
+        //     console.log(person.name);
+        // })
+
+        // for(let index = 0; index < personList.length; index++) {
+        //     const person = personList[index];
+        //     console.log(person.name);
+        // }
+
+        // for(let person of personList) {
+        //     console.log(person.name);
+        // }
+
+        // function filterPerson(person) {
+        //     if(person.age >= 18)
+        //         return person;
+        // }
+
+        // const personListFiltered = personList.filter(a => filterPerson(a));
+
+        // const personListFind = personList.find(b => filterPerson(b));
+
+        // console.log(personListFiltered);
+        // console.log(personListFind);
     </script>
 </head>
 
