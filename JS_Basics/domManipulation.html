@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <style>
+        .main-color {
+            color: blue;
+        }
+
+        .font-size {
+            font-size: 20px;
+        }
+    </style>
+    <script>
+        // document.addEventListener("DOMContentLoaded", function() {
+        //     document.getElementById("paragraph1").innerText = "Change text";
+        // });
+    </script>
+</head>
+
+<body>
+    <div id="container">
+        <p id="paragraph1" class="main-color font-size">This is a paragraph1</p>
+        <p id="paragraph2">This is a paragraph2</p>
+        <div id="containerJS">
+            <p class="main-color">This is a paragraph3</p>
+        </div>
+        <button>Dark/Light</button>
+    </div>
+    <script>
+        //Identify elements on DOM
+
+        // const elementByID = document.getElementById("paragraph1");
+
+        // console.log(elementByID.innerText);
+        // console.log(elementByID.innerHTML);
+
+        // // elementByID.innerText = "Changed <br> text";
+        // // elementByID.innerHTML = "Changed <br> text";
+
+        // // console.log(elementByID.innerText);
+        // // console.log(elementByID.innerHTML);
+
+        // const elementsByTag = document.getElementsByTagName("p");
+
+        // console.log(elementsByTag);
+
+        // for(let paragraph of elementsByTag) {
+        //     console.log(paragraph.innerText);
+        // }
+
+        // const elementsByClass = document.getElementsByClassName("main-color");
+
+        // console.log(elementsByClass);
+
+        // for(let paragraph of elementsByClass) {
+        //     console.log(paragraph.innerText);
+        // }
+
+        // const elementByQuerySelector = document.querySelector("div p");
+
+        // console.log(elementByQuerySelector.innerText);
+
+        // const elementsByQuerySelector = document.querySelectorAll("div p");
+
+        // console.log(elementsByQuerySelector);
+
+        // for(let element of elementsByQuerySelector) {
+        //     console.log(element.innerText);
+        // }
+
+        // setTimeout(function() {
+        //  const paragraph1 = document.getElementById("paragraph1");
+        //     paragraph1.innerHTML = "Changed <br> text";
+        //     paragraph1.style.color = "green";
+
+        //     paragraph1.classList.remove("font-size");
+        // }, 4000);
+
+        // const container = document.getElementById("container");
+
+        // function actionBtn() {
+        //     toggleTheme();
+        //     setColorButton();
+        // }
+
+        // function toggleTheme() {
+        //     const elementsByTag = document.getElementsByTagName("p");
+
+        //     for (let paragraph of elementsByTag) {
+        //         paragraph.style.color = "red";
+        //     }
+        // }
+
+        // function setColorButton() {
+        //     const elementBtn = container.lastElementChild;
+        //     elementBtn.style.color = "green";
+        // }
+
+        // const button = container.lastElementChild;
+
+        // // button.onclick = setColorButton;
+        // // button.onclick = toggleTheme;
+
+        //button.addEventListener("click", setColorButton);
+        // button.addEventListener("click", toggleTheme);
+
+        const container = document.getElementById("container");
+        const button = container.lastElementChild;
+
+        button.addEventListener("click", toggleParagraph);
+
+        function toggleParagraph() {
+            const elementContainerJS = document.getElementById("containerJS");
+
+            const elementAddedFromJS = document.getElementById("addedFromJS");
+
+            if(elementAddedFromJS) {
+                elementContainerJS.removeChild(elementAddedFromJS);
+            } else {
+                const newContainer = document.createElement("div");
+                newContainer.setAttribute("id", "addedFromJS");
+
+                const newElement1 = createParagraph("I'm a simple paragraph");
+                const newElement2 = createParagraph("I'm a new paragraph");
+
+                newContainer.appendChild(newElement1);
+                newContainer.appendChild(newElement2);
+
+                elementContainerJS.appendChild(newContainer);
+            }
+        }
+
+        function createParagraph(textValue) {
+            const paragraph = document.createElement("p");
+            const textContent = document.createTextNode(textValue);
+
+            paragraph.appendChild(textContent);
+            
+            return paragraph;
+        }
+
+        //HW:
+        //Dark/Light
+        //Headings and Paragraphs (text elements)
+        //One button
+        //Once clicked will toogle from dark to light or from light to dark
+        //I suggest to use replace on classes -- or add/remove classes
+        //Changing text
+        //Start easy
+        //I would start with a h1 and 2 <p>
+        //One button
+        //Once clicked will change the text for the language
+        //BMI
+        //Display in UI what was on console
+        //Apply colors based on BMI Result
+    </script>
+</body>
+
+</html>
