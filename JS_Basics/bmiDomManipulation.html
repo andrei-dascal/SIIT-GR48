@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <style>
+        .underweight {
+            color: blue;
+        }
+
+        .normal-weight {
+            color: green;
+        }
+
+        .overweight {
+            color: orange;
+        }
+
+        .obese {
+            color: red;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="containerID"></div>
+    <script>
+        const Gender = {
+            Male: "Male",
+            Female: "Female"
+        }
+
+        const customer1 = {
+            name: "Jimmy Carter",
+            gender: Gender.Male,
+            height: 1.75,
+            weight: 78
+        }
+
+        const customer2 = {
+            name: "Tim Johnson",
+            gender: Gender.Male,
+            height: 1.83,
+            weight: 74
+        };
+
+        const customer3 = {
+            name: "Robert Forest",
+            gender: Gender.Male,
+            height: 1.72,
+            weight: 103
+        };
+
+        function calculateBMI(weight, height) {
+            return Math.floor(weight / (height * height));
+        }
+
+        function getBMIObject(BMI) {
+            if (BMI < 18.5)
+                return {
+                    category: "Underweight",
+                    color: "blue"
+                };
+
+            if (BMI < 25)
+                return {
+                    category: "Normal weight",
+                    color: "green"
+                };
+
+            if (BMI < 30)
+                return {
+                    category: "Overweight",
+                    color: "orange"
+                };
+
+            return {
+                category: "Obese",
+                color: "red"
+            };;
+        }
+
+        function getBMICategory(BMI) {
+            if (BMI < 18.5)
+                return "Underweight";
+
+            if (BMI < 25)
+                return "Normal weight";
+
+            if (BMI < 30)
+                return "Overweight";
+
+            return "Obese";
+        }
+
+        function getBMIColor(BMI) {
+            if (BMI < 18.5)
+                return "blue";
+
+            if (BMI < 25)
+                return "green";
+
+            if (BMI < 30)
+                return "orange";
+
+            return "red";
+        }
+
+        function getBMICategoryWithSpan(BMI) {
+            if (BMI < 18.5)
+                return "<span class='underweight'>Underweight</span>";
+
+            if (BMI < 25)
+                return "<span class='normal-weight'>Normal weight</span>";
+
+            if (BMI < 30)
+                return "<span class='overweight'>Overweight</span>";
+
+            return "<span class='obese'>Obese</span>";
+        }
+
+        const customers = [customer1, customer2, customer3];
+
+        // for (let index = 0; index < customers.length; index++) {
+        //     const customer = customers[index];
+        //     const customerBMI = calculateBMI(customer.weight, customer.height);
+        //     console.log(`${customer.name} | ${customer.gender} | ${customerBMI} | ${getBMICategory(customerBMI)}`);
+        // }
+
+        for (let customer of customers) {
+            const customerBMI = calculateBMI(customer.weight, customer.height);
+            // console.log(`${customer.name} | ${customer.gender} | ${customerBMI} | ${getBMICategory(customerBMI)}`);
+            //displayBMIInfoUsingInsertAdjacentHTML(`<p>${customer.name} | ${customer.gender} | ${customerBMI} | ${getBMICategoryWithSpan(customerBMI)}</p>`);
+            //displayBMIInfo(customer.name, customer.gender, customerBMI, getBMICategory(customerBMI));
+            displayBMIInfoUsingObjects(customer.name, customer.gender, customerBMI, getBMIObject(customerBMI));
+        }
+
+        function displayBMIInfoUsingInsertAdjacentHTML(textValue) {
+            document.body.insertAdjacentHTML('afterend', textValue);
+        }
+
+        function displayBMIInfoUsingObjects(customerName, customerGender, customerBMI, customerBMIStatus) {
+            // const paragraph = createParagraph(`${customerName} | ${customerGender} | ${customerBMI} | `);
+            const paragraph = createHtmlElement('p', `${customerName} | ${customerGender} | ${customerBMI} | `);
+
+            // const span = createSpan(customerBMICategory);
+            const span = createHtmlElement('span', customerBMIStatus.category);
+            span.style.color = customerBMIStatus.color;
+
+            const container = document.getElementById('containerID');
+
+            paragraph.appendChild(span);
+
+            container.appendChild(paragraph);
+        }
+
+        function displayBMIInfo(customerName, customerGender, customerBMI, customerBMICategory) {
+            // const paragraph = createParagraph(`${customerName} | ${customerGender} | ${customerBMI} | `);
+            const paragraph = createHtmlElement('p', `${customerName} | ${customerGender} | ${customerBMI} | `);
+
+            // const span = createSpan(customerBMICategory);
+            const span = createHtmlElement('span', customerBMICategory);
+            span.style.color = getBMIColor(customerBMI);
+
+            const container = document.getElementById('containerID');
+
+            paragraph.appendChild(span);
+
+            container.appendChild(paragraph);
+        }
+
+        function createHtmlElement(element, textValue) {
+            const htmlElement = document.createElement(element);
+            const textContent = document.createTextNode(textValue);
+
+            htmlElement.appendChild(textContent);
+            return htmlElement;
+        }
+
+        // function createParagraph(textValue) {
+        //     const paragraph = document.createElement("p");
+        //     const textContent = document.createTextNode(textValue);
+
+        //     paragraph.appendChild(textContent);
+        //     return paragraph;
+        // }
+
+        // function createSpan(textValue) {
+        //     const span = document.createElement("span");
+        //     const textContent = document.createTextNode(textValue);
+
+        //     span.appendChild(textContent);
+        //     return span;
+        // }
+    </script>
+</body>
+
+</html>
