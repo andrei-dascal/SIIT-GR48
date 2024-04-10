@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <script>
+        const Gender = {
+            Male: "Male",
+            Female: "Female"
+        }
+
+        //Factory pattern
+        function createCustomer(name, gender, height, weight) {
+            return {
+                name: name,
+                gender: gender,
+                height: height,
+                weight: weight,
+                calculateBMI: function () {
+                    return this.weight / (this.height * this.height);
+                }
+            }
+        }
+
+        const customer1 = createCustomer("Andrei Dascal", Gender.Male, 1.80, 82);
+        const customer2 = createCustomer("Maria Ion", Gender.Female, 1.60, 62);
+
+        console.log(customer1.calculateBMI());
+        console.log(customer2.calculateBMI());
+
+        //Constructor pattern
+        //Rename CustomerUsingConstructor to Customer - in real life
+        function CustomerUsingConstructor(name, gender, height, weight) {
+            this.name = name;
+            this.gender = gender;
+            this.height = height;
+            this.weight = weight;
+
+            this.calculateBMI = function() {
+                return this.weight / (this.height * this.height);
+            }
+        }
+
+        const customer1_1 = new CustomerUsingConstructor("Andrei Dascal", Gender.Male, 1.80, 82);
+        const customer2_1 = new CustomerUsingConstructor("Maria Ion", Gender.Female, 1.60, 62);
+
+        console.log(customer1_1.calculateBMI());
+        console.log(customer2_1.calculateBMI());
+
+        class ConfigData {
+            static ClientKey = "Test";
+
+            static Path() {
+                return "No need for an object here";
+            }
+        }
+
+        class Customer {
+            #name;
+            #gender;
+            #height;
+            #weight;
+            
+            constructor(name, gender, height, weight) {
+                this.#name = name;
+                this.#gender = gender;
+                this.#height = height;
+                this.#weight = weight;
+            }
+
+            getName() {
+                return this.#name;
+            }
+
+            setName(newName) {
+                this.#name = newName;
+            }
+
+            //Use getter and setters every time
+            get name() {
+                return this.#name;
+            }
+
+            set name(newName) {
+                this.#name = newName;
+            }
+
+            get weight() {
+                return this.#weight;
+            }
+
+            set weight(newWeight) {
+                if(newWeight < 0)
+                    return;
+                
+                this.#weight = newWeight;
+            }
+
+            calculateBMI() {
+                return this.#weight / (this.#height * this.#height);
+            }
+        }
+
+        const customer1_2 = new Customer("Andrei Dascal", Gender.Male, 1.80, 82);
+        const customer2_2 = new Customer("Maria Ion", Gender.Female, 1.60, 62);
+
+        console.log(customer1_2.calculateBMI());
+        console.log(customer1_2.name);
+        console.log(customer1_2.getName());
+        console.log(customer2_2.calculateBMI());
+        console.log(customer2_2.name);
+        console.log(customer2_2.getName());
+
+        // customer1_2.name = "Andrei S. Dascal";
+        // customer1_2.#name = "Andrei S. Dascal";
+        // customer1_2.weight = 75;
+        // console.log(customer1_2.name);
+        // console.log(customer1_2.calculateBMI());
+
+        console.log(customer1_2.name);
+        customer1_2.name = "Something new";
+        customer1_2.setName("Something new usign function");
+        console.log(customer1_2.name);
+
+        //Call static methods
+        console.log(ConfigData.Path());
+        console.log(ConfigData.ClientKey);
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>
