@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html>
+    <head></head>
+    <body>
+        <script>
+            const personWithoutClass = {
+                firstName: "Andrei",
+                lastName: "Dascal",
+                gender: "Male",
+                personalID: "123456789",
+                wallet: {
+                    phisicalMoney: 1000,
+                    virtualAccounts: [{
+                        iban: "RO43BTRLasasdasd",
+                        amount: 400,
+                        currency: "RON" //struct enum
+                    },
+                    {
+                        iban: "RO43BCR123456",
+                        amount: 4000,
+                        currency: "EUR" //struct enum
+                    }]
+                },
+
+                payBill: function(idInvoice, amount) {
+                }
+            }
+
+            class Account {
+                #iban;
+                #amount;
+                #currency;
+
+                constructor(iban, amount, currency) {
+                    this.#iban = iban;
+                    this.#amount = amount;
+                    this.#currency = currency;
+                }
+
+                transferMoney(destinationAccount, amountForTransfer) {
+                    if(this.#currency !== destinationAccount.currency)
+                        return false;
+
+                    if(this.#amount < amountForTransfer)
+                        return false;
+
+                    this.#amount = this.#amount - amountForTransfer;
+                    destinationAccount.topUpAccount(amountForTransfer);
+
+                    return true;
+                }
+
+                topUpAccount(amountForTopUp) {
+                    //Log details
+                    this.#amount = this.#amount + amountForTopUp;
+                }
+
+                get amount() {
+                    return this.#amount;
+                }
+
+                get currency() {
+                    return this.#currency;
+                }
+            }
+
+            class Wallet {
+                #phisicalMoney;
+                #virtualAccounts;
+
+                constructor(phisicalMoney) {
+                    this.#virtualAccounts = [];
+                    this.#phisicalMoney = phisicalMoney;
+                }
+
+                addAccount(account) {
+                    this.#virtualAccounts.push(account);
+                }
+
+                withdraw(account, amountForWithdraw) {
+                    this.#phisicalMoney = this.#phisicalMoney + amountForWithdraw;
+                    //Withdraw from an account: account.amount = account.amount - amountForWithdraw;
+                }
+            }
+
+            class Person {
+                //Make them private
+                firstName;
+                lastName;
+                gender;
+                personalID;
+                wallet;
+
+                constructor(firstName, lastName, gender, personalID, wallet) {
+                    this.firstName = firstName;
+                    this.lastName = lastName;
+                    this.gender = gender;
+                    this.personalID = personalID;
+                    this.wallet = wallet;
+                }
+
+                payBill(idInvoice, amount) {
+
+                }
+
+                //incasezSalariu
+
+                //+ Other methods
+            }
+
+            //User is a sub class / Person is the base class
+            class User extends Person {
+                #username;
+                #password;
+
+                constructor(username, password, person) {
+                    //super is calling the Person constructor
+                    super(person.firstName, person.lastName, person.gender, person.personalID, person.wallet);
+                    this.#username = username;
+                    this.#password = password;
+                }
+
+                login(username, password) {
+                    if(this.#validateUser(username, password))
+                        console.log("Login successfully");
+                    else
+                        console.log("Login failed");
+                }
+
+                updatePassword(username, oldPassword, newPassword) {
+                    const isUserValid = this.#validateUser(username, oldPassword);
+
+                    if(!isUserValid)
+                        return;
+
+                    //validatePassword => validate new password
+
+                    const isPasswordValid = this.#validatePassword(newPassword);
+
+                    if(!isPasswordValid)
+                        return;
+
+                    this.#password = newPassword;
+                }
+
+                #validateUser(username, password) {
+                    const isValid = this.#username === username && this.#password === password;
+
+                    if(!isValid)
+                        console.log("Invalid user");
+
+                    return isValid;
+                }
+
+                #validatePassword(password) {
+                    if(password.length < 6)
+                        return false;
+
+                    return true;
+
+                }
+            }
+
+            class Admin extends User {
+                constructor(username, password, person) {
+                    super(username, password, person);
+                }
+
+                login(username, password) {
+                    console.log("Admin login");
+                    super.login(username, password);
+                }
+
+                addUser(user) {
+
+                }
+
+                removeUser(user) {
+
+                }
+            }
+
+            const account1 = new Account("RO43BTRLRON", 400, "RON");
+            const account2 = new Account("RO43BTRLEUR", 100, "EUR");
+            const account3 = new Account("RO43BTRLRON2", 500, "RON");
+
+            const wallet = new Wallet(1000);
+            wallet.addAccount(account1);
+            wallet.addAccount(account2);
+
+            const andreiDascal = new Person("Andrei", "Dascal", "Male", "123456789", wallet);
+
+            account1.transferMoney(account3, 50);
+
+            console.log(`Suma din contul1: ${account1.amount}`);
+            console.log(`Suma din contul2: ${account3.amount}`);
+
+            //If amount is public can be very easily changed by mistake
+            // andreiDascal.wallet.virtualAccounts[0].amount = 10000;
+
+            //console.log(andreiDascal.wallet.virtualAccounts[0].amount);
+
+            const userAndreiDascal = new User("andrei.dascal", "parola.123", andreiDascal);
+
+            userAndreiDascal.login("andrei.dascal", "parola.123");
+            userAndreiDascal.login("andrei.dascal123", "parola.123");
+            userAndreiDascal.login("andrei.dascal", "parola.123456");
+
+            // console.log(userAndreiDascal.firstName);
+
+            userAndreiDascal.updatePassword("andrei.dascal123", "parola.123", "parola.123456");
+            userAndreiDascal.updatePassword("andrei.dascal", "parola123", "parola.123456");
+            userAndreiDascal.updatePassword("andrei.dascal", "parola.123", "123");
+            userAndreiDascal.updatePassword("andrei.dascal", "parola.123", "parola.123456");
+
+            userAndreiDascal.login("andrei.dascal", "parola.123");
+
+            const adminAndreiDascal = new Admin("andrei.dascal", "parola.123", andreiDascal);
+
+            adminAndreiDascal.updatePassword("andrei.dascal", "parola.123", "parola.456");
+
+            adminAndreiDascal.login("andrei.dascal", "parola.456");
+        </script>
+    </body>
+</html>
