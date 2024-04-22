@@ -1,0 +1,251 @@
+{
+  "users": [
+    {
+      "id": 1,
+      "username": "andrei.dascal@siit.ro",
+      "password": "parola.123",
+      "role": "Admin"
+    },
+    {
+      "id": 2,
+      "username": "ion.pop@siit.ro",
+      "password": "123.parola",
+      "role": "User"
+    },
+    {
+      "id": 3,
+      "username": "maria.pop@siit.ro",
+      "password": "123.parola",
+      "role": "User"
+    },
+    {
+      "username": "andreea.pop@siit.ro",
+      "password": "123.parola",
+      "role": "User",
+      "id": 4
+    },
+    {
+      "username": "andreea.pop@siit.ro",
+      "password": "123.parola",
+      "role": "User",
+      "id": 5
+    }
+  ],
+  "questions": [
+    {
+      "category": "sport_and_leisure",
+      "id": "622a1c367cc59eab6f9500ab",
+      "correctAnswer": "Face Off",
+      "incorrectAnswers": [
+        "Drop Puck",
+        "Toss Up",
+        "Throw Down"
+      ],
+      "question": {
+        "text": "In hockey, what is the equivalent of a rugby scrum?"
+      },
+      "tags": [
+        "hockey",
+        "sport"
+      ],
+      "type": "text_choice",
+      "difficulty": "medium",
+      "regions": [],
+      "isNiche": false
+    },
+    {
+      "category": "film_and_tv",
+      "id": "622a1c377cc59eab6f9506c9",
+      "correctAnswer": "Kevin Spacey",
+      "incorrectAnswers": [
+        "Russell Crowe",
+        "Jean-Claude Van Damme",
+        "John Turturro"
+      ],
+      "question": {
+        "text": "Which actor has played roles in films including American Beauty and Superman Returns?"
+      },
+      "tags": [
+        "film",
+        "film_and_tv",
+        "acting"
+      ],
+      "type": "text_choice",
+      "difficulty": "medium",
+      "regions": [],
+      "isNiche": false
+    },
+    {
+      "category": "geography",
+      "id": "63b058724799123c67712f2e",
+      "correctAnswer": "Ben Nevis",
+      "incorrectAnswers": [
+        "Mount Snowdon",
+        "Scafell Pike",
+        "Carrantouhill"
+      ],
+      "question": {
+        "text": "What is the highest mountain in the UK?"
+      },
+      "tags": [
+        "uk",
+        "mountains",
+        "geography"
+      ],
+      "type": "text_choice",
+      "difficulty": "medium",
+      "regions": [],
+      "isNiche": false
+    },
+    {
+      "category": "society_and_culture",
+      "id": "63dd25ca742e43ed64f1f01a",
+      "correctAnswer": "General Motors",
+      "incorrectAnswers": [
+        "Ford",
+        "Toyota",
+        "Daimler"
+      ],
+      "question": {
+        "text": "What company owns the brand 'Chevrolet'?"
+      },
+      "tags": [
+        "society_and_culture",
+        "business",
+        "motoring"
+      ],
+      "type": "text_choice",
+      "difficulty": "medium",
+      "regions": [],
+      "isNiche": false
+    },
+    {
+      "category": "film_and_tv",
+      "id": "622a1c347cc59eab6f94fb44",
+      "correctAnswer": "Unforgiven",
+      "incorrectAnswers": [
+        "The Crying Game",
+        "A Few Good Men",
+        "Howards End"
+      ],
+      "question": {
+        "text": "Which film won the Academy Award for Best Picture in 1992?"
+      },
+      "tags": [
+        "academy_awards",
+        "film",
+        "film_and_tv"
+      ],
+      "type": "text_choice",
+      "difficulty": "hard",
+      "regions": [],
+      "isNiche": false
+    },
+    {
+      "category": "film_and_tv",
+      "id": "649fcf8eebb41911d4cbd6e3",
+      "correctAnswer": "A bullet",
+      "incorrectAnswers": [
+        "A space rocket",
+        "A submarine",
+        "A pen"
+      ],
+      "question": {
+        "text": "What does the title of the movie 'Full Metal Jacket' refer to?"
+      },
+      "tags": [
+        "film",
+        "film_and_tv"
+      ],
+      "type": "text_choice",
+      "difficulty": "easy",
+      "regions": [],
+      "isNiche": false
+    },
+    {
+      "category": "society_and_culture",
+      "id": "622a1c367cc59eab6f95013f",
+      "correctAnswer": "Ka",
+      "incorrectAnswers": [
+        "Ki",
+        "Hai",
+        "Ko"
+      ],
+      "question": {
+        "text": "In Egyptian mythology, what is the life force called?"
+      },
+      "tags": [
+        "society_and_culture"
+      ],
+      "type": "text_choice",
+      "difficulty": "hard",
+      "regions": [],
+      "isNiche": false
+    },
+    {
+      "category": "film_and_tv",
+      "id": "622a1c377cc59eab6f950646",
+      "correctAnswer": "Laura Dern",
+      "incorrectAnswers": [
+        "Frances Fisher",
+        "Salma Hayek",
+        "Rachel Weisz"
+      ],
+      "question": {
+        "text": "Which actress has featured in films including Jurassic Park and Star Wars: Episode VIII – The Last Jedi?"
+      },
+      "tags": [
+        "acting",
+        "film",
+        "star_wars",
+        "film_and_tv"
+      ],
+      "type": "text_choice",
+      "difficulty": "hard",
+      "regions": [],
+      "isNiche": false
+    },
+    {
+      "category": "history",
+      "id": "622a1c3c7cc59eab6f9519dd",
+      "correctAnswer": "Prohibition",
+      "incorrectAnswers": [
+        "Segregation",
+        "Slavery",
+        "British Rule"
+      ],
+      "question": {
+        "text": "What came to an end in the United States in December 1933?"
+      },
+      "tags": [
+        "history"
+      ],
+      "type": "text_choice",
+      "difficulty": "medium",
+      "regions": [],
+      "isNiche": false
+    },
+    {
+      "category": "film_and_tv",
+      "id": "622a1c357cc59eab6f94feae",
+      "correctAnswer": "Beyoncé",
+      "incorrectAnswers": [
+        "Madonna",
+        "Drake",
+        "Nicki Minaj"
+      ],
+      "question": {
+        "text": "Who played the role of Nala in the 2019 remake of The Lion King?"
+      },
+      "tags": [
+        "disney",
+        "film",
+        "film_and_tv"
+      ],
+      "type": "text_choice",
+      "difficulty": "medium",
+      "regions": [],
+      "isNiche": false
+    }
+  ]
+}

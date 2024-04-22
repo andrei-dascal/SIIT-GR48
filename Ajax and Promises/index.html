@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+    <head></head>
+    <body>
+        <div>
+            <h2>Using XMLHTTPRequest</h2>
+            <button onclick="loadAllQuestionsUsingXML()">Load all questions</button>
+            <button onclick="loadAllQuestionsByDifficultyUsingXML()">Load all questions by difficulty</button>
+            <button>Insert a question</button>
+            <button>Update the question</button>
+            <button>Delete the question</button>
+            <div id="containerID"></div>
+        </div>
+        <script>
+            const apiURLQuestions = "http://localhost:3000/questions";
+
+            function loadAllQuestionsUsingXML() {
+                const xmlHttp = new XMLHttpRequest();
+
+                xmlHttp.onreadystatechange = function() {
+                    if(this.readyState === XMLHttpRequest.DONE && this.status === 200) {
+                        const questions = JSON.parse(this.responseText);
+
+                        showQuestions(questions);
+                    }
+
+                    if(this.readyState === XMLHttpRequest.DONE && this.status === 500) {
+                        //Log error
+                        console.log("Server error");
+                    }
+                }
+
+                xmlHttp.open("GET", apiURLQuestions);
+                xmlHttp.send();
+            }
+
+            function loadAllQuestionsByDifficultyUsingXML() {
+                const xmlHttp = new XMLHttpRequest();
+
+                xmlHttp.onreadystatechange = function() {
+                    if(this.readyState === XMLHttpRequest.DONE && this.status === 200) {
+                        const questions = JSON.parse(this.responseText);
+
+                        showQuestions(questions);
+                    }
+                }
+
+                xmlHttp.open("GET", `${apiURLQuestions}?difficulty=medium`);
+                xmlHttp.send();
+            }
+
+            function showQuestions(questions) {
+                for (let index = 0; index < questions.length; index++) {
+                    const paragraph = document.createElement('p');
+                    const textContent = document.createTextNode(questions[index].question.text);
+                    paragraph.appendChild(textContent);
+
+                    if(index % 2 === 0)
+                        paragraph.style.backgroundColor = "gray";
+
+                    document.getElementById('containerID').appendChild(paragraph);
+                }
+            }
+        </script>
+    </body>
+</html>
