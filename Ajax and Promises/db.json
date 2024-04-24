@@ -1,4 +1,18 @@
 {
+  "languages": [
+    {
+      "id": "622a1c367cc59eab6f9500ab",
+      "language": "Ro",
+      "Home_Menu_Label": "Meniu",
+      "Home_Menu_Description": "Ceva descriere din meniu"
+    },
+    {
+      "id": "622a1c367cc59eab6f9500ab",
+      "language": "En",
+      "Home_Menu_Label": "Menu",
+      "Home_Menu_Description": "Some description"
+    }
+  ],
   "users": [
     {
       "id": 1,
