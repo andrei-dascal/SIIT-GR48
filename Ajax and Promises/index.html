@@ -1,66 +1,269 @@
 <!DOCTYPE html>
 <html>
-    <head></head>
-    <body>
-        <div>
-            <h2>Using XMLHTTPRequest</h2>
-            <button onclick="loadAllQuestionsUsingXML()">Load all questions</button>
-            <button onclick="loadAllQuestionsByDifficultyUsingXML()">Load all questions by difficulty</button>
-            <button>Insert a question</button>
-            <button>Update the question</button>
-            <button>Delete the question</button>
-            <div id="containerID"></div>
-        </div>
-        <script>
-            const apiURLQuestions = "http://localhost:3000/questions";
 
-            function loadAllQuestionsUsingXML() {
-                const xmlHttp = new XMLHttpRequest();
+<head></head>
 
-                xmlHttp.onreadystatechange = function() {
-                    if(this.readyState === XMLHttpRequest.DONE && this.status === 200) {
-                        const questions = JSON.parse(this.responseText);
+<body>
+    <div>
+        <h2>Using XMLHTTPRequest</h2>
+        <button onclick="loadAllQuestionsUsingXML()">Load all questions</button>
+        <button onclick="loadAllQuestionsByDifficultyUsingXML()">Load all questions by difficulty</button>
+        <button onclick="insertQuestionUsingXML()">Insert a question</button>
+        <button onclick="updateQuestionUsingXML()">Update the question</button>
+        <button onclick="deleteQuestionUsingXML()">Delete the question</button>
+        <br>
+        <button onclick="loadAllQuestionsUsingPromises()">Load all questions</button>
+        <button onclick="loadAllQuestionsByDifficultyUsingPromises()">Load all questions by difficulty</button>
+        <button onclick="insertQuestionUsingPromises()">Insert a question</button>
+        <button onclick="updateQuestionUsingPromises()">Update the question</button>
+        <button onclick="deleteQuestionUsingPromises()">Delete the question</button>
+        <div id="containerID"></div>
+    </div>
+    <script>
+        const apiURLQuestions = "http://localhost:3000/questions";
 
-                        showQuestions(questions);
-                    }
+        function loadAllQuestionsUsingXML() {
+            const xmlHttp = new XMLHttpRequest();
 
-                    if(this.readyState === XMLHttpRequest.DONE && this.status === 500) {
-                        //Log error
-                        console.log("Server error");
-                    }
+            xmlHttp.onreadystatechange = function () {
+                if (this.readyState === XMLHttpRequest.DONE && this.status === 200) {
+                    const questions = JSON.parse(this.responseText);
+
+                    showQuestions(questions);
                 }
 
-                xmlHttp.open("GET", apiURLQuestions);
-                xmlHttp.send();
-            }
-
-            function loadAllQuestionsByDifficultyUsingXML() {
-                const xmlHttp = new XMLHttpRequest();
-
-                xmlHttp.onreadystatechange = function() {
-                    if(this.readyState === XMLHttpRequest.DONE && this.status === 200) {
-                        const questions = JSON.parse(this.responseText);
-
-                        showQuestions(questions);
-                    }
-                }
-
-                xmlHttp.open("GET", `${apiURLQuestions}?difficulty=medium`);
-                xmlHttp.send();
-            }
-
-            function showQuestions(questions) {
-                for (let index = 0; index < questions.length; index++) {
-                    const paragraph = document.createElement('p');
-                    const textContent = document.createTextNode(questions[index].question.text);
-                    paragraph.appendChild(textContent);
-
-                    if(index % 2 === 0)
-                        paragraph.style.backgroundColor = "gray";
-
-                    document.getElementById('containerID').appendChild(paragraph);
+                if (this.readyState === XMLHttpRequest.DONE && this.status === 500) {
+                    //Log error
+                    console.log("Server error");
                 }
             }
-        </script>
-    </body>
+
+            xmlHttp.open("GET", apiURLQuestions);
+            xmlHttp.send();
+        }
+
+        function loadAllQuestionsByDifficultyUsingXML() {
+            const xmlHttp = new XMLHttpRequest();
+
+            xmlHttp.onreadystatechange = function () {
+                if (this.readyState === XMLHttpRequest.DONE && this.status === 200) {
+                    const questions = JSON.parse(this.responseText);
+
+                    showQuestions(questions);
+                }
+            }
+
+            xmlHttp.open("GET", `${apiURLQuestions}?difficulty=medium`);
+            xmlHttp.send();
+        }
+
+        function insertQuestionUsingXML() {
+            //Data should come from inputs from
+            const newQuestion = {
+                "category": "film_and_tv",
+                "correctAnswer": "Beyoncé _Test",
+                "incorrectAnswers": [
+                    "Madonna _Test",
+                    "Drake _Test",
+                    "Nicki Minaj _Test"
+                ],
+                "question": {
+                    "text": "Who played the role of Nala in the 2019 remake of The Lion King? _Test"
+                },
+                "tags": [
+                    "disney",
+                    "film",
+                    "film_and_tv"
+                ],
+                "type": "text_choice",
+                "difficulty": "hard",
+                "regions": [],
+                "isNiche": false
+            }
+
+            const xmlHttp = new XMLHttpRequest();
+
+            xmlHttp.onreadystatechange = function () {
+                if (this.readyState === XMLHttpRequest.DONE && this.status === 201) {
+                    console.log(this.responseText);
+                }
+            }
+
+            xmlHttp.open("POST", apiURLQuestions);
+
+            xmlHttp.setRequestHeader("Content-type", "application/json");
+
+            xmlHttp.send(JSON.stringify(newQuestion));
+        }
+
+        function updateQuestionUsingXML() {
+            //Data should come from inputs from
+            const existingQuestion = {
+                "category": "film_and_tv",
+                "correctAnswer": "Beyoncé _Test2",
+                "incorrectAnswers": [
+                    "Madonna _Test2",
+                    "Drake _Test2",
+                    "Nicki Minaj _Test2"
+                ],
+                "question": {
+                    "text": "Who played the role of Nala in the 2019 remake of The Lion King? _Test2"
+                },
+                "tags": [
+                    "disney",
+                    "film",
+                    "film_and_tv"
+                ],
+                "type": "text_choice",
+                "difficulty": "hard",
+                "regions": [],
+                "isNiche": false
+            }
+
+            const existingQuestionID = "ur7U9x-";
+
+            const xmlHttp = new XMLHttpRequest();
+
+            xmlHttp.onreadystatechange = function () {
+                if (this.readyState === XMLHttpRequest.DONE && this.status === 200) {
+                    console.log(this.responseText);
+                }
+            }
+
+            xmlHttp.open("PUT", `${apiURLQuestions}/${existingQuestionID}`);
+
+            xmlHttp.setRequestHeader("Content-type", "application/json");
+
+            xmlHttp.send(JSON.stringify(existingQuestion));
+        }
+
+        function deleteQuestionUsingXML() {
+            const existingQuestionID = "ur7U9x-";
+
+            const xmlHttp = new XMLHttpRequest();
+
+            xmlHttp.onreadystatechange = function () {
+                if (this.readyState === XMLHttpRequest.DONE && this.status === 200) {
+                    console.log(this.responseText);
+                }
+            }
+
+            xmlHttp.open("DELETE", `${apiURLQuestions}/${existingQuestionID}`);
+
+            xmlHttp.send();
+        }
+
+        function loadAllQuestionsUsingPromises() {
+            fetch(apiURLQuestions)
+                .then(response => response.json())
+                .then(questions => {
+                    // throw new Error('Something happened in a callback function');
+                    showQuestions(questions);
+                })
+                .catch(error => console.log(error));
+        }
+
+        function insertQuestionUsingPromises() {
+            //Data should come from inputs from
+            const newQuestion = {
+                "category": "film_and_tv",
+                "correctAnswer": "Beyoncé _Test",
+                "incorrectAnswers": [
+                    "Madonna _Test",
+                    "Drake _Test",
+                    "Nicki Minaj _Test"
+                ],
+                "question": {
+                    "text": "Who played the role of Nala in the 2019 remake of The Lion King? _Test"
+                },
+                "tags": [
+                    "disney",
+                    "film",
+                    "film_and_tv"
+                ],
+                "type": "text_choice",
+                "difficulty": "hard",
+                "regions": [],
+                "isNiche": false
+            }
+
+            fetch(apiURLQuestions, {
+                method: "POST",
+                headers: {
+                    "Content-type": "application/json"
+                },
+                body: JSON.stringify(newQuestion)
+            })
+                .then(response => response.json())
+                .then(question => {
+                    console.log(question);
+                });
+        }
+
+        function updateQuestionUsingPromises() {
+            //Data should come from inputs from
+            const existingQuestion = {
+                "category": "film_and_tv",
+                "correctAnswer": "Beyoncé _Test2",
+                "incorrectAnswers": [
+                    "Madonna _Test2",
+                    "Drake _Test2",
+                    "Nicki Minaj _Test2"
+                ],
+                "question": {
+                    "text": "Who played the role of Nala in the 2019 remake of The Lion King? _Test2"
+                },
+                "tags": [
+                    "disney",
+                    "film",
+                    "film_and_tv"
+                ],
+                "type": "text_choice",
+                "difficulty": "hard",
+                "regions": [],
+                "isNiche": false
+            }
+
+            const existingQuestionID = "o6Oq0gy";
+
+            fetch(`${apiURLQuestions}/${existingQuestionID}`, {
+                method: "PUT",
+                headers: {
+                    "Content-type": "application/json"
+                },
+                body: JSON.stringify(existingQuestion)
+            })
+                .then(response => response.json())
+                .then(question => {
+                    console.log(question);
+                });
+        }
+
+        function deleteQuestionUsingPromises() {
+            const existingQuestionID = "o6Oq0gy";
+
+            fetch(`${apiURLQuestions}/${existingQuestionID}`, {
+                method: "DELETE"
+            })
+                .then(response => response.json())
+                .then(question => {
+                    console.log(question);
+                })
+        }
+
+        function showQuestions(questions) {
+            for (let index = 0; index < questions.length; index++) {
+                const paragraph = document.createElement('p');
+                const textContent = document.createTextNode(questions[index].question.text);
+                paragraph.appendChild(textContent);
+
+                if (index % 2 === 0)
+                    paragraph.style.backgroundColor = "gray";
+
+                document.getElementById('containerID').appendChild(paragraph);
+            }
+        }
+    </script>
+</body>
+
 </html>

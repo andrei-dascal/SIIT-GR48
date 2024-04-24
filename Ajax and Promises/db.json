@@ -31,6 +31,17 @@
       "id": 5
     }
   ],
+  "categories": [
+    {
+      "category": "film_and_tv"
+    },
+    {
+      "category": "music"
+    },
+    {
+      "category": "football"
+    }
+  ],
   "questions": [
     {
       "category": "sport_and_leisure",
