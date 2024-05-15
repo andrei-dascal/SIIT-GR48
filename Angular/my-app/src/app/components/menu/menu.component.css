@@ -1,0 +1,34 @@
+.header {
+    display: flex;
+    align-items: center;
+    background-image: linear-gradient(to right, blue, pink);
+}
+
+.header .logo {
+    height: 40px;
+}
+
+.header .menu {
+    display: flex;
+    flex-basis: 100%;
+    justify-content: space-between;
+}
+
+.header a {
+    color: white;
+    text-decoration: none;
+    padding: var(--padding-lg) var(--padding-md);
+}
+
+.header a:hover {
+    background-color: darkblue;
+}
+
+.header .site-nav {
+    display: flex;
+    align-items: center;
+}
+
+.header .account-btn {
+    align-self: flex-end;
+}

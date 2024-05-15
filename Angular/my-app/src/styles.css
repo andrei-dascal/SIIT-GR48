@@ -1,0 +1,23 @@
+/* You can add global styles to this file, and also import other style files */
+:root {
+    --mobile-treshold: 600px;
+
+    --main-color: red;
+    --secondary-color: blue;
+    --third-color: rgb(32, 222, 32);
+
+    --margin-xs: 4px;
+    --margin-sm: 8px;
+    --margin-md: 12px;
+
+    --padding-xs: 4px;
+    --padding-sm: 8px;
+    --padding-md: 12px;
+    --padding-lg: 20px;
+    --padding-xl: 24px;
+}
+
+* {
+    padding: 0px;
+    margin: 0px;
+}
