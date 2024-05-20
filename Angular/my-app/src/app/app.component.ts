@@ -15,13 +15,13 @@ import { ToggleComponent } from './components/menu/shared/toggle/toggle.componen
   styleUrl: './app.component.css'
 })
 export class AppComponent {
-  public mainColor: string = 'red';
-  public secondaryColor: string = 'green';
+  // public mainColor: string = 'red';
+  // public secondaryColor: string = 'green';
 
-  public mainImageSrc: string = 'https://helpx.adobe.com/content/dam/help/en/photoshop/using/convert-color-image-black-white/jcr_content/main-pars/before_and_after/image-before/Landscape-Color.jpg';
-  public fallbackImageSrc: string = 'https://images.unsplash.com/photo-1575936123452-b67c3203c357?q=80&w=1000&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8aW1hZ2V8ZW58MHx8MHx8fDA%3D';
+  // public mainImageSrc: string = 'https://helpx.adobe.com/content/dam/help/en/photoshop/using/convert-color-image-black-white/jcr_content/main-pars/before_and_after/image-before/Landscape-Color.jpg';
+  // public fallbackImageSrc: string = 'https://images.unsplash.com/photo-1575936123452-b67c3203c357?q=80&w=1000&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8aW1hZ2V8ZW58MHx8MHx8fDA%3D';
 
-  public birthday: Date = new Date(1989, 9, 27);
+  // public birthday: Date = new Date(1989, 9, 27);
 
   public languageSelected: Language = Language.Romanian;
 

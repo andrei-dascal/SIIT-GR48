@@ -1,11 +1,17 @@
-import { Component, Input, OnInit, SimpleChange } from "@angular/core";
+import { Component, Input, OnInit, SimpleChanges } from "@angular/core";
 import { Language } from "../../models/language.model";
+import { TextContentService } from "../../services/text-content.service";
+import { HttpClient, HttpHandler } from "@angular/common/http";
+import { TextContent } from "../../models/text-content.model";
+import { RouterLink, RouterOutlet } from "@angular/router";
 
 @Component({
     standalone: true,
     selector: 'menu',
+    imports: [RouterLink],
     templateUrl: './menu.component.html',
-    styleUrls: ['./menu.component.css']
+    styleUrls: ['./menu.component.css'],
+    providers: [TextContentService]
 })
 export class MenuComponent implements OnInit {
     @Input() language: Language = Language.English;
@@ -15,32 +21,17 @@ export class MenuComponent implements OnInit {
     newsMenuText: string = '';
     accountMenuText: string = '';
 
-    ngOnInit(): void {
-        if (this.language === Language.English) {
-            this.articleMenuText = "Article";
-            this.blogMenuText = "Blog";
-            this.newsMenuText = "News";
-            this.accountMenuText = "Account";
-        } else {
-            this.articleMenuText = "Articol";
-            this.blogMenuText = "Blog";
-            this.newsMenuText = "Stiri";
-            this.accountMenuText = "Contul meu";
-        }
+    constructor(private textContentService: TextContentService) {
+
     }
 
-    ngOnChanges(changes: SimpleChange): void {
-        if (this.language === Language.English) {
-            this.articleMenuText = "Article";
-            this.blogMenuText = "Blog";
-            this.newsMenuText = "News";
-            this.accountMenuText = "Account";
-        } else {
-            this.articleMenuText = "Articol";
-            this.blogMenuText = "Blog";
-            this.newsMenuText = "Stiri";
-            this.accountMenuText = "Contul meu";
-        }
+    ngOnInit(): void {
+        this.initData();
+    }
+
+    ngOnChanges(changes: SimpleChanges): void {
+        if (!changes["language"].firstChange)
+            this.initData();
     }
 
     goToArticle() {
@@ -57,5 +48,14 @@ export class MenuComponent implements OnInit {
 
     goToAccount() {
         console.log('goToAccount');
+    }
+
+    private initData() {
+        this.textContentService.getTextContent(this.language).subscribe((content: TextContent) => {
+            this.articleMenuText = content.menu.Article_Button;
+            this.blogMenuText = content.menu.Blog_Button;
+            this.newsMenuText = content.menu.News_Button;
+            this.accountMenuText = content.menu.Account_Button;
+        });
     }
 }

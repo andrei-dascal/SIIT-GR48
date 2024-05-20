@@ -2,15 +2,23 @@
   "languages": [
     {
       "id": "622a1c367cc59eab6f9500ab",
-      "language": "Ro",
-      "Home_Menu_Label": "Meniu",
-      "Home_Menu_Description": "Ceva descriere din meniu"
+      "language": "1",
+      "menu": {
+        "Article_Button": "Articol",
+        "Account_Button": "Contul meu",
+        "Blog_Button": "Blog",
+        "News_Button": "Stiri"
+      }
     },
     {
       "id": "622a1c367cc59eab6f9500ab",
-      "language": "En",
-      "Home_Menu_Label": "Menu",
-      "Home_Menu_Description": "Some description"
+      "language": "2",
+      "menu": {
+        "Article_Button": "Article",
+        "Account_Button": "Account",
+        "Blog_Button": "Blog",
+        "News_Button": "News"
+      }
     }
   ],
   "users": [
